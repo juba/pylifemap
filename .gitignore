@@ -1,8 +1,0 @@
-node_modules/
-__pycache__/
-dist/
-.ipynb_checkpoints/
-data/
-examples/
-src/pylifemap/static/
-app/
