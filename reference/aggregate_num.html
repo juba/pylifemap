@@ -222,15 +222,86 @@ ul.task-list li input[type="checkbox"] {
 <p>Aggregates a numerical variable in a DataFrame with taxonomy ids along the branches of the lifemap tree.</p>
 <section id="parameters" class="level2">
 <h2 class="anchored" data-anchor-id="parameters">Parameters</h2>
-<p>d : pd.DataFrame | pl.DataFrame DataFrame to aggregate data from. column : str Name of the <code>d</code> column to aggregate. fn : {“sum”, “mean”, “min”, “max”, “median”} Function used to aggregate the values, by default “sum”. taxid_col : str, optional Name of the <code>d</code> column containing taxonomy ids, by default “taxid”</p>
+<table class="table">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 35%">
+<col style="width: 46%">
+<col style="width: 8%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>d</code></td>
+<td>pandas.pandas.DataFrame | polars.polars.DataFrame</td>
+<td>DataFrame to aggregate data from.</td>
+<td><em>required</em></td>
+</tr>
+<tr class="even">
+<td><code>column</code></td>
+<td>str</td>
+<td>Name of the <code>d</code> column to aggregate.</td>
+<td><em>required</em></td>
+</tr>
+<tr class="odd">
+<td><code>fn</code></td>
+<td>(sum, mean, min, max, median)</td>
+<td>Function used to aggregate the values, by default “sum”.</td>
+<td><code>"sum"</code></td>
+</tr>
+<tr class="even">
+<td><code>taxid_col</code></td>
+<td>str</td>
+<td>Name of the <code>d</code> column containing taxonomy ids, by default “taxid”</td>
+<td><code>'taxid'</code></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="returns" class="level2">
 <h2 class="anchored" data-anchor-id="returns">Returns</h2>
-<p>pl.DataFrame Aggregated DataFrame.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>polars.polars.DataFrame</td>
+<td>Aggregated DataFrame.</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="raises" class="level2">
 <h2 class="anchored" data-anchor-id="raises">Raises</h2>
-<p>ValueError If <code>column</code> is equal to “taxid”. ValueError If <code>fn</code> is not on the allowed values.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ValueError</td>
+<td>If <code>column</code> is equal to “taxid”.</td>
+</tr>
+<tr class="even">
+<td>ValueError</td>
+<td>If <code>fn</code> is not on the allowed values.</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="see-also" class="level2">
 <h2 class="anchored" data-anchor-id="see-also">See Also</h2>

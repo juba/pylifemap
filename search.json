@@ -4,7 +4,7 @@
     "href": "reference/aggregate_count.html",
     "title": "aggregate_count",
     "section": "",
-    "text": "aggregate_count(d, *, result_col='n', taxid_col='taxid')\nAggregates nodes count in a DataFrame with taxonomy ids along the branches of the lifemap tree.\n\n\nd : pd.DataFrame | pl.DataFrame DataFrame to aggregate data from. result_col : str, optional Name of the column created to store the counts, by default “n”. taxid_col : str, optional Name of the d column containing taxonomy ids, by default “taxid”.\n\n\n\npl.DataFrame Aggregated DataFrame.\n\n\n\naggregate_num : aggregation of a numeric variable. aggregate_freq : aggregation of the values counts of a categorical variable.",
+    "text": "aggregate_count(d, *, result_col='n', taxid_col='taxid')\nAggregates nodes count in a DataFrame with taxonomy ids along the branches of the lifemap tree.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nd\npandas.pandas.DataFrame | polars.polars.DataFrame\nDataFrame to aggregate data from.\nrequired\n\n\nresult_col\nstr\nName of the column created to store the counts, by default “n”.\n'n'\n\n\ntaxid_col\nstr\nName of the d column containing taxonomy ids, by default “taxid”.\n'taxid'\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\npolars.polars.DataFrame\nAggregated DataFrame.\n\n\n\n\n\n\naggregate_num : aggregation of a numeric variable. aggregate_freq : aggregation of the values counts of a categorical variable.",
     "crumbs": [
       "Reference",
       "Aggregation functions",
@@ -16,7 +16,7 @@
     "href": "reference/aggregate_count.html#parameters",
     "title": "aggregate_count",
     "section": "",
-    "text": "d : pd.DataFrame | pl.DataFrame DataFrame to aggregate data from. result_col : str, optional Name of the column created to store the counts, by default “n”. taxid_col : str, optional Name of the d column containing taxonomy ids, by default “taxid”.",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nd\npandas.pandas.DataFrame | polars.polars.DataFrame\nDataFrame to aggregate data from.\nrequired\n\n\nresult_col\nstr\nName of the column created to store the counts, by default “n”.\n'n'\n\n\ntaxid_col\nstr\nName of the d column containing taxonomy ids, by default “taxid”.\n'taxid'",
     "crumbs": [
       "Reference",
       "Aggregation functions",
@@ -28,7 +28,7 @@
     "href": "reference/aggregate_count.html#returns",
     "title": "aggregate_count",
     "section": "",
-    "text": "pl.DataFrame Aggregated DataFrame.",
+    "text": "Type\nDescription\n\n\n\n\npolars.polars.DataFrame\nAggregated DataFrame.",
     "crumbs": [
       "Reference",
       "Aggregation functions",
@@ -155,7 +155,7 @@
     "href": "reference/aggregate_freq.html",
     "title": "aggregate_freq",
     "section": "",
-    "text": "aggregate_freq(d, column, *, taxid_col='taxid')\nAggregates a categorical variable in a DataFrame with taxonomy ids as a value counts along the branchesof the lifemap tree.\n\n\nd : pd.DataFrame | pl.DataFrame DataFrame to aggregate data from. column : str Name of the d column to aggregate. taxid_col : str, optional Name of the d column containing taxonomy ids, by default “taxid”.\n\n\n\npl.DataFrame Aggregated DataFrame. The “count” column contains the value counts as a polars struct.\n\n\n\naggregate_num : aggregation of a numeric variable. aggregate_count : aggregation of the number of observations.",
+    "text": "aggregate_freq(d, column, *, taxid_col='taxid')\nAggregates a categorical variable in a DataFrame with taxonomy ids as a value counts along the branchesof the lifemap tree.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nd\npandas.pandas.DataFrame | polars.polars.DataFrame\nDataFrame to aggregate data from.\nrequired\n\n\ncolumn\nstr\nName of the d column to aggregate.\nrequired\n\n\ntaxid_col\nstr\nName of the d column containing taxonomy ids, by default “taxid”.\n'taxid'\n\n\n\n\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\npolars.polars.DataFrame\nAggregated DataFrame. The “count” column contains the value counts as a polars struct.\n\n\n\n\n\n\naggregate_num : aggregation of a numeric variable. aggregate_count : aggregation of the number of observations.",
     "crumbs": [
       "Reference",
       "Aggregation functions",
@@ -167,7 +167,7 @@
     "href": "reference/aggregate_freq.html#parameters",
     "title": "aggregate_freq",
     "section": "",
-    "text": "d : pd.DataFrame | pl.DataFrame DataFrame to aggregate data from. column : str Name of the d column to aggregate. taxid_col : str, optional Name of the d column containing taxonomy ids, by default “taxid”.",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nd\npandas.pandas.DataFrame | polars.polars.DataFrame\nDataFrame to aggregate data from.\nrequired\n\n\ncolumn\nstr\nName of the d column to aggregate.\nrequired\n\n\ntaxid_col\nstr\nName of the d column containing taxonomy ids, by default “taxid”.\n'taxid'",
     "crumbs": [
       "Reference",
       "Aggregation functions",
@@ -179,7 +179,7 @@
     "href": "reference/aggregate_freq.html#returns",
     "title": "aggregate_freq",
     "section": "",
-    "text": "pl.DataFrame Aggregated DataFrame. The “count” column contains the value counts as a polars struct.",
+    "text": "Type\nDescription\n\n\n\n\npolars.polars.DataFrame\nAggregated DataFrame. The “count” column contains the value counts as a polars struct.",
     "crumbs": [
       "Reference",
       "Aggregation functions",
@@ -203,7 +203,7 @@
     "href": "reference/aggregate_num.html",
     "title": "aggregate_num",
     "section": "",
-    "text": "aggregate_num(d, column, *, fn='sum', taxid_col='taxid')\nAggregates a numerical variable in a DataFrame with taxonomy ids along the branches of the lifemap tree.\n\n\nd : pd.DataFrame | pl.DataFrame DataFrame to aggregate data from. column : str Name of the d column to aggregate. fn : {“sum”, “mean”, “min”, “max”, “median”} Function used to aggregate the values, by default “sum”. taxid_col : str, optional Name of the d column containing taxonomy ids, by default “taxid”\n\n\n\npl.DataFrame Aggregated DataFrame.\n\n\n\nValueError If column is equal to “taxid”. ValueError If fn is not on the allowed values.\n\n\n\naggregate_count : aggregation of the number of observations. aggregate_freq : aggregation of the values counts of a categorical variable.",
+    "text": "aggregate_num(d, column, *, fn='sum', taxid_col='taxid')\nAggregates a numerical variable in a DataFrame with taxonomy ids along the branches of the lifemap tree.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nd\npandas.pandas.DataFrame | polars.polars.DataFrame\nDataFrame to aggregate data from.\nrequired\n\n\ncolumn\nstr\nName of the d column to aggregate.\nrequired\n\n\nfn\n(sum, mean, min, max, median)\nFunction used to aggregate the values, by default “sum”.\n\"sum\"\n\n\ntaxid_col\nstr\nName of the d column containing taxonomy ids, by default “taxid”\n'taxid'\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\npolars.polars.DataFrame\nAggregated DataFrame.\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nValueError\nIf column is equal to “taxid”.\n\n\nValueError\nIf fn is not on the allowed values.\n\n\n\n\n\n\naggregate_count : aggregation of the number of observations. aggregate_freq : aggregation of the values counts of a categorical variable.",
     "crumbs": [
       "Reference",
       "Aggregation functions",
@@ -215,7 +215,7 @@
     "href": "reference/aggregate_num.html#parameters",
     "title": "aggregate_num",
     "section": "",
-    "text": "d : pd.DataFrame | pl.DataFrame DataFrame to aggregate data from. column : str Name of the d column to aggregate. fn : {“sum”, “mean”, “min”, “max”, “median”} Function used to aggregate the values, by default “sum”. taxid_col : str, optional Name of the d column containing taxonomy ids, by default “taxid”",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nd\npandas.pandas.DataFrame | polars.polars.DataFrame\nDataFrame to aggregate data from.\nrequired\n\n\ncolumn\nstr\nName of the d column to aggregate.\nrequired\n\n\nfn\n(sum, mean, min, max, median)\nFunction used to aggregate the values, by default “sum”.\n\"sum\"\n\n\ntaxid_col\nstr\nName of the d column containing taxonomy ids, by default “taxid”\n'taxid'",
     "crumbs": [
       "Reference",
       "Aggregation functions",
@@ -227,7 +227,7 @@
     "href": "reference/aggregate_num.html#returns",
     "title": "aggregate_num",
     "section": "",
-    "text": "pl.DataFrame Aggregated DataFrame.",
+    "text": "Type\nDescription\n\n\n\n\npolars.polars.DataFrame\nAggregated DataFrame.",
     "crumbs": [
       "Reference",
       "Aggregation functions",
@@ -239,7 +239,7 @@
     "href": "reference/aggregate_num.html#raises",
     "title": "aggregate_num",
     "section": "",
-    "text": "ValueError If column is equal to “taxid”. ValueError If fn is not on the allowed values.",
+    "text": "Type\nDescription\n\n\n\n\nValueError\nIf column is equal to “taxid”.\n\n\nValueError\nIf fn is not on the allowed values.",
     "crumbs": [
       "Reference",
       "Aggregation functions",
