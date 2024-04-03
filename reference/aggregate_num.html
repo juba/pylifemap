@@ -200,7 +200,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#pylifemap.aggregate_num" id="toc-pylifemap.aggregate_num" class="nav-link active" data-scroll-target="#pylifemap.aggregate_num">aggregate_num</a></li>
+  <li><a href="#pylifemap.aggregate_num" id="toc-pylifemap.aggregate_num" class="nav-link active" data-scroll-target="#pylifemap.aggregate_num">aggregate_num</a>
+  <ul class="collapse">
+  <li><a href="#parameters" id="toc-parameters" class="nav-link" data-scroll-target="#parameters">Parameters</a></li>
+  <li><a href="#returns" id="toc-returns" class="nav-link" data-scroll-target="#returns">Returns</a></li>
+  <li><a href="#raises" id="toc-raises" class="nav-link" data-scroll-target="#raises">Raises</a></li>
+  <li><a href="#see-also" id="toc-see-also" class="nav-link" data-scroll-target="#see-also">See Also</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/juba/pylifemap/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -213,8 +219,25 @@ ul.task-list li input[type="checkbox"] {
 <section id="pylifemap.aggregate_num" class="level1">
 <h1>aggregate_num</h1>
 <p><code>aggregate_num(d, column, *, fn='sum', taxid_col='taxid')</code></p>
+<p>Aggregates a numerical variable in a DataFrame with taxonomy ids along the branches of the lifemap tree.</p>
+<section id="parameters" class="level2">
+<h2 class="anchored" data-anchor-id="parameters">Parameters</h2>
+<p>d : pd.DataFrame | pl.DataFrame DataFrame to aggregate data from. column : str Name of the <code>d</code> column to aggregate. fn : {“sum”, “mean”, “min”, “max”, “median”} Function used to aggregate the values, by default “sum”. taxid_col : str, optional Name of the <code>d</code> column containing taxonomy ids, by default “taxid”</p>
+</section>
+<section id="returns" class="level2">
+<h2 class="anchored" data-anchor-id="returns">Returns</h2>
+<p>pl.DataFrame Aggregated DataFrame.</p>
+</section>
+<section id="raises" class="level2">
+<h2 class="anchored" data-anchor-id="raises">Raises</h2>
+<p>ValueError If <code>column</code> is equal to “taxid”. ValueError If <code>fn</code> is not on the allowed values.</p>
+</section>
+<section id="see-also" class="level2">
+<h2 class="anchored" data-anchor-id="see-also">See Also</h2>
+<p>aggregate_count : aggregation of the number of observations. aggregate_cat : aggregation of the values counts of a categorical variable.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

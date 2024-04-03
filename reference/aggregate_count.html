@@ -200,7 +200,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#pylifemap.aggregate_count" id="toc-pylifemap.aggregate_count" class="nav-link active" data-scroll-target="#pylifemap.aggregate_count">aggregate_count</a></li>
+  <li><a href="#pylifemap.aggregate_count" id="toc-pylifemap.aggregate_count" class="nav-link active" data-scroll-target="#pylifemap.aggregate_count">aggregate_count</a>
+  <ul class="collapse">
+  <li><a href="#parameters" id="toc-parameters" class="nav-link" data-scroll-target="#parameters">Parameters</a></li>
+  <li><a href="#returns" id="toc-returns" class="nav-link" data-scroll-target="#returns">Returns</a></li>
+  <li><a href="#see-also" id="toc-see-also" class="nav-link" data-scroll-target="#see-also">See Also</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/juba/pylifemap/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -212,9 +217,22 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="pylifemap.aggregate_count" class="level1">
 <h1>aggregate_count</h1>
-<p><code>aggregate_count(d, *, taxid_col='taxid', result_col='n')</code></p>
+<p><code>aggregate_count(d, *, result_col='n', taxid_col='taxid')</code></p>
+<p>Aggregates nodes count in a DataFrame with taxonomy ids along the branches of the lifemap tree.</p>
+<section id="parameters" class="level2">
+<h2 class="anchored" data-anchor-id="parameters">Parameters</h2>
+<p>d : pd.DataFrame | pl.DataFrame DataFrame to aggregate data from. result_col : str, optional Name of the column created to store the counts, by default “n” taxid_col : str, optional Name of the <code>d</code> column containing taxonomy ids, by default “taxid”</p>
+</section>
+<section id="returns" class="level2">
+<h2 class="anchored" data-anchor-id="returns">Returns</h2>
+<p>pl.DataFrame Aggregated DataFrame.</p>
+</section>
+<section id="see-also" class="level2">
+<h2 class="anchored" data-anchor-id="see-also">See Also</h2>
+<p>aggregate_num : aggregation of a numeric variable. aggregate_cat : aggregation of the values counts of a categorical variable.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
