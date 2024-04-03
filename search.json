@@ -1,22 +1,10 @@
 [
   {
-    "objectID": "reference/aggregate_cat.html",
-    "href": "reference/aggregate_cat.html",
-    "title": "aggregate_cat",
-    "section": "",
-    "text": "aggregate_cat\naggregate_cat(d, column, *, keep_leaves=False, taxid_col='taxid')",
-    "crumbs": [
-      "Reference",
-      "Aggregation functions",
-      "aggregate_cat"
-    ]
-  },
-  {
     "objectID": "reference/aggregate_count.html",
     "href": "reference/aggregate_count.html",
     "title": "aggregate_count",
     "section": "",
-    "text": "aggregate_count(d, *, result_col='n', taxid_col='taxid')\nAggregates nodes count in a DataFrame with taxonomy ids along the branches of the lifemap tree.\n\n\nd : pd.DataFrame | pl.DataFrame DataFrame to aggregate data from. result_col : str, optional Name of the column created to store the counts, by default “n” taxid_col : str, optional Name of the d column containing taxonomy ids, by default “taxid”\n\n\n\npl.DataFrame Aggregated DataFrame.\n\n\n\naggregate_num : aggregation of a numeric variable. aggregate_cat : aggregation of the values counts of a categorical variable.",
+    "text": "aggregate_count(d, *, result_col='n', taxid_col='taxid')\nAggregates nodes count in a DataFrame with taxonomy ids along the branches of the lifemap tree.\n\n\nd : pd.DataFrame | pl.DataFrame DataFrame to aggregate data from. result_col : str, optional Name of the column created to store the counts, by default “n”. taxid_col : str, optional Name of the d column containing taxonomy ids, by default “taxid”.\n\n\n\npl.DataFrame Aggregated DataFrame.\n\n\n\naggregate_num : aggregation of a numeric variable. aggregate_freq : aggregation of the values counts of a categorical variable.",
     "crumbs": [
       "Reference",
       "Aggregation functions",
@@ -28,7 +16,7 @@
     "href": "reference/aggregate_count.html#parameters",
     "title": "aggregate_count",
     "section": "",
-    "text": "d : pd.DataFrame | pl.DataFrame DataFrame to aggregate data from. result_col : str, optional Name of the column created to store the counts, by default “n” taxid_col : str, optional Name of the d column containing taxonomy ids, by default “taxid”",
+    "text": "d : pd.DataFrame | pl.DataFrame DataFrame to aggregate data from. result_col : str, optional Name of the column created to store the counts, by default “n”. taxid_col : str, optional Name of the d column containing taxonomy ids, by default “taxid”.",
     "crumbs": [
       "Reference",
       "Aggregation functions",
@@ -52,7 +40,7 @@
     "href": "reference/aggregate_count.html#see-also",
     "title": "aggregate_count",
     "section": "",
-    "text": "aggregate_num : aggregation of a numeric variable. aggregate_cat : aggregation of the values counts of a categorical variable.",
+    "text": "aggregate_num : aggregation of a numeric variable. aggregate_freq : aggregation of the values counts of a categorical variable.",
     "crumbs": [
       "Reference",
       "Aggregation functions",
@@ -60,41 +48,23 @@
     ]
   },
   {
-    "objectID": "reference/index.html",
-    "href": "reference/index.html",
-    "title": "Reference",
+    "objectID": "reference/Lifemap.html",
+    "href": "reference/Lifemap.html",
+    "title": "Lifemap",
     "section": "",
-    "text": "Main Lifemap class.\n\n\n\nLifemap\n\n\n\n\n\n\n\nFunctions aggregate data.\n\n\n\naggregate_count\nAggregates nodes count in a DataFrame with taxonomy ids along the branches\n\n\naggregate_num\nAggregates a numerical variable in a DataFrame with taxonomy ids along the branches\n\n\naggregate_cat",
+    "text": "Lifemap\nLifemap(self, data, *, locate=True, taxid_col='taxid', x_col='pylifemap_x', y_col='pylifemap_y', zoom=5, legend_width=None, width=DEFAULT_WIDTH, height=DEFAULT_HEIGHT)",
     "crumbs": [
-      "Reference"
+      "Reference",
+      "Lifemap class",
+      "Lifemap"
     ]
   },
   {
-    "objectID": "reference/index.html#lifemap-class",
-    "href": "reference/index.html#lifemap-class",
-    "title": "Reference",
+    "objectID": "reference/aggregate_cat.html",
+    "href": "reference/aggregate_cat.html",
+    "title": "aggregate_cat",
     "section": "",
-    "text": "Main Lifemap class.\n\n\n\nLifemap",
-    "crumbs": [
-      "Reference"
-    ]
-  },
-  {
-    "objectID": "reference/index.html#aggregation-functions",
-    "href": "reference/index.html#aggregation-functions",
-    "title": "Reference",
-    "section": "",
-    "text": "Functions aggregate data.\n\n\n\naggregate_count\nAggregates nodes count in a DataFrame with taxonomy ids along the branches\n\n\naggregate_num\nAggregates a numerical variable in a DataFrame with taxonomy ids along the branches\n\n\naggregate_cat",
-    "crumbs": [
-      "Reference"
-    ]
-  },
-  {
-    "objectID": "usage.html",
-    "href": "usage.html",
-    "title": "Usage",
-    "section": "",
-    "text": "Usage instructions."
+    "text": "aggregate_cat\naggregate_cat(d, column, *, keep_leaves=False, taxid_col='taxid')"
   },
   {
     "objectID": "development.html",
@@ -132,6 +102,27 @@
     "text": "Maintenance notes\n\nReleases\n\nChange version in NEWS.md and src/pylifemap/__about__.py\nRelease the Python package with hatch build and hatch publish in pylifemap\nTag the version in git\nCreate a release on Github\nBump to dev version in pyproject.toml and NEWS.md"
   },
   {
+    "objectID": "changelog.html",
+    "href": "changelog.html",
+    "title": "Changelog",
+    "section": "",
+    "text": "Development version, work in progress"
+  },
+  {
+    "objectID": "changelog.html#pylifemap-0.0.1-dev",
+    "href": "changelog.html#pylifemap-0.0.1-dev",
+    "title": "Changelog",
+    "section": "",
+    "text": "Development version, work in progress"
+  },
+  {
+    "objectID": "usage.html",
+    "href": "usage.html",
+    "title": "Usage",
+    "section": "",
+    "text": "Usage instructions."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "pylifemap",
@@ -160,11 +151,59 @@
     "text": "Credits\n\nThe iucn data files in the data/ directory have been generated from The IUCN Red List of Threatened Species dataset (DOI 10.15468/0qnb58).\nVisualizations are powered by Open Layers and deck.gl.\nThe widget is developed thanks to the anywidget framework.\nThis documentation website is generated by Quarto and quartodoc."
   },
   {
+    "objectID": "reference/aggregate_freq.html",
+    "href": "reference/aggregate_freq.html",
+    "title": "aggregate_freq",
+    "section": "",
+    "text": "aggregate_freq(d, column, *, taxid_col='taxid')\nAggregates a categorical variable in a DataFrame with taxonomy ids as a value counts along the branchesof the lifemap tree.\n\n\nd : pd.DataFrame | pl.DataFrame DataFrame to aggregate data from. column : str Name of the d column to aggregate. taxid_col : str, optional Name of the d column containing taxonomy ids, by default “taxid”.\n\n\n\npl.DataFrame Aggregated DataFrame. The “count” column contains the value counts as a polars struct.\n\n\n\naggregate_num : aggregation of a numeric variable. aggregate_count : aggregation of the number of observations.",
+    "crumbs": [
+      "Reference",
+      "Aggregation functions",
+      "aggregate_freq"
+    ]
+  },
+  {
+    "objectID": "reference/aggregate_freq.html#parameters",
+    "href": "reference/aggregate_freq.html#parameters",
+    "title": "aggregate_freq",
+    "section": "",
+    "text": "d : pd.DataFrame | pl.DataFrame DataFrame to aggregate data from. column : str Name of the d column to aggregate. taxid_col : str, optional Name of the d column containing taxonomy ids, by default “taxid”.",
+    "crumbs": [
+      "Reference",
+      "Aggregation functions",
+      "aggregate_freq"
+    ]
+  },
+  {
+    "objectID": "reference/aggregate_freq.html#returns",
+    "href": "reference/aggregate_freq.html#returns",
+    "title": "aggregate_freq",
+    "section": "",
+    "text": "pl.DataFrame Aggregated DataFrame. The “count” column contains the value counts as a polars struct.",
+    "crumbs": [
+      "Reference",
+      "Aggregation functions",
+      "aggregate_freq"
+    ]
+  },
+  {
+    "objectID": "reference/aggregate_freq.html#see-also",
+    "href": "reference/aggregate_freq.html#see-also",
+    "title": "aggregate_freq",
+    "section": "",
+    "text": "aggregate_num : aggregation of a numeric variable. aggregate_count : aggregation of the number of observations.",
+    "crumbs": [
+      "Reference",
+      "Aggregation functions",
+      "aggregate_freq"
+    ]
+  },
+  {
     "objectID": "reference/aggregate_num.html",
     "href": "reference/aggregate_num.html",
     "title": "aggregate_num",
     "section": "",
-    "text": "aggregate_num(d, column, *, fn='sum', taxid_col='taxid')\nAggregates a numerical variable in a DataFrame with taxonomy ids along the branches of the lifemap tree.\n\n\nd : pd.DataFrame | pl.DataFrame DataFrame to aggregate data from. column : str Name of the d column to aggregate. fn : {“sum”, “mean”, “min”, “max”, “median”} Function used to aggregate the values, by default “sum”. taxid_col : str, optional Name of the d column containing taxonomy ids, by default “taxid”\n\n\n\npl.DataFrame Aggregated DataFrame.\n\n\n\nValueError If column is equal to “taxid”. ValueError If fn is not on the allowed values.\n\n\n\naggregate_count : aggregation of the number of observations. aggregate_cat : aggregation of the values counts of a categorical variable.",
+    "text": "aggregate_num(d, column, *, fn='sum', taxid_col='taxid')\nAggregates a numerical variable in a DataFrame with taxonomy ids along the branches of the lifemap tree.\n\n\nd : pd.DataFrame | pl.DataFrame DataFrame to aggregate data from. column : str Name of the d column to aggregate. fn : {“sum”, “mean”, “min”, “max”, “median”} Function used to aggregate the values, by default “sum”. taxid_col : str, optional Name of the d column containing taxonomy ids, by default “taxid”\n\n\n\npl.DataFrame Aggregated DataFrame.\n\n\n\nValueError If column is equal to “taxid”. ValueError If fn is not on the allowed values.\n\n\n\naggregate_count : aggregation of the number of observations. aggregate_freq : aggregation of the values counts of a categorical variable.",
     "crumbs": [
       "Reference",
       "Aggregation functions",
@@ -212,7 +251,7 @@
     "href": "reference/aggregate_num.html#see-also",
     "title": "aggregate_num",
     "section": "",
-    "text": "aggregate_count : aggregation of the number of observations. aggregate_cat : aggregation of the values counts of a categorical variable.",
+    "text": "aggregate_count : aggregation of the number of observations. aggregate_freq : aggregation of the values counts of a categorical variable.",
     "crumbs": [
       "Reference",
       "Aggregation functions",
@@ -220,29 +259,33 @@
     ]
   },
   {
-    "objectID": "reference/Lifemap.html",
-    "href": "reference/Lifemap.html",
-    "title": "Lifemap",
+    "objectID": "reference/index.html",
+    "href": "reference/index.html",
+    "title": "Reference",
     "section": "",
-    "text": "Lifemap\nLifemap(self, data, *, locate=True, taxid_col='taxid', x_col='pylifemap_x', y_col='pylifemap_y', zoom=5, legend_width=None, width=DEFAULT_WIDTH, height=DEFAULT_HEIGHT)",
+    "text": "Main Lifemap class.\n\n\n\nLifemap\n\n\n\n\n\n\n\nFunctions to aggregate data along the branches of the lifemap tree.\n\n\n\naggregate_count\nAggregates nodes count in a DataFrame with taxonomy ids along the branches\n\n\naggregate_num\nAggregates a numerical variable in a DataFrame with taxonomy ids along the branches\n\n\naggregate_freq\nAggregates a categorical variable in a DataFrame with taxonomy ids as a value",
     "crumbs": [
-      "Reference",
-      "Lifemap class",
-      "Lifemap"
+      "Reference"
     ]
   },
   {
-    "objectID": "changelog.html",
-    "href": "changelog.html",
-    "title": "Changelog",
+    "objectID": "reference/index.html#lifemap-class",
+    "href": "reference/index.html#lifemap-class",
+    "title": "Reference",
     "section": "",
-    "text": "Development version, work in progress"
+    "text": "Main Lifemap class.\n\n\n\nLifemap",
+    "crumbs": [
+      "Reference"
+    ]
   },
   {
-    "objectID": "changelog.html#pylifemap-0.0.1-dev",
-    "href": "changelog.html#pylifemap-0.0.1-dev",
-    "title": "Changelog",
+    "objectID": "reference/index.html#aggregation-functions",
+    "href": "reference/index.html#aggregation-functions",
+    "title": "Reference",
     "section": "",
-    "text": "Development version, work in progress"
+    "text": "Functions to aggregate data along the branches of the lifemap tree.\n\n\n\naggregate_count\nAggregates nodes count in a DataFrame with taxonomy ids along the branches\n\n\naggregate_num\nAggregates a numerical variable in a DataFrame with taxonomy ids along the branches\n\n\naggregate_freq\nAggregates a categorical variable in a DataFrame with taxonomy ids as a value",
+    "crumbs": [
+      "Reference"
+    ]
   }
 ]
