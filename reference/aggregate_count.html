@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.552">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -106,14 +140,21 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link active" href="../reference/index.html" aria-current="page"> 
 <span class="menu-text">Reference</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../development.html"> 
-<span class="menu-text">Development</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-development" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Development</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-development">    
+        <li>
+    <a class="dropdown-item" href="../changelog.html">
+ <span class="dropdown-text">Changelog</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../changelog.html"> 
-<span class="menu-text">Changelog</span></a>
+        <li>
+    <a class="dropdown-item" href="../development.html">
+ <span class="dropdown-text">Development notes</span></a>
   </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
@@ -205,6 +246,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#parameters" id="toc-parameters" class="nav-link" data-scroll-target="#parameters">Parameters</a></li>
   <li><a href="#returns" id="toc-returns" class="nav-link" data-scroll-target="#returns">Returns</a></li>
   <li><a href="#see-also" id="toc-see-also" class="nav-link" data-scroll-target="#see-also">See Also</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/juba/pylifemap/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
@@ -218,16 +260,11 @@ ul.task-list li input[type="checkbox"] {
 <section id="pylifemap.aggregate_count" class="level1">
 <h1>aggregate_count</h1>
 <p><code>aggregate_count(d, *, result_col='n', taxid_col='taxid')</code></p>
+<p>Nodes count aggregation along branches.</p>
 <p>Aggregates nodes count in a DataFrame with taxonomy ids along the branches of the lifemap tree.</p>
 <section id="parameters" class="level2">
 <h2 class="anchored" data-anchor-id="parameters">Parameters</h2>
 <table class="table">
-<colgroup>
-<col style="width: 9%">
-<col style="width: 35%">
-<col style="width: 46%">
-<col style="width: 8%">
-</colgroup>
 <thead>
 <tr class="header">
 <th>Name</th>
@@ -239,19 +276,19 @@ ul.task-list li input[type="checkbox"] {
 <tbody>
 <tr class="odd">
 <td><code>d</code></td>
-<td>pandas.pandas.DataFrame | polars.polars.DataFrame</td>
+<td><code>pd</code>.<code>DataFrame</code> | <code>pl</code>.<code>DataFrame</code></td>
 <td>DataFrame to aggregate data from.</td>
 <td><em>required</em></td>
 </tr>
 <tr class="even">
 <td><code>result_col</code></td>
-<td>str</td>
+<td><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></td>
 <td>Name of the column created to store the counts, by default “n”.</td>
 <td><code>'n'</code></td>
 </tr>
 <tr class="odd">
 <td><code>taxid_col</code></td>
-<td>str</td>
+<td><a href="https://docs.python.org/3/library/stdtypes.html#str">str</a></td>
 <td>Name of the <code>d</code> column containing taxonomy ids, by default “taxid”.</td>
 <td><code>'taxid'</code></td>
 </tr>
@@ -261,6 +298,10 @@ ul.task-list li input[type="checkbox"] {
 <section id="returns" class="level2">
 <h2 class="anchored" data-anchor-id="returns">Returns</h2>
 <table class="table">
+<colgroup>
+<col style="width: 67%">
+<col style="width: 32%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Type</th>
@@ -269,7 +310,7 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td>polars.polars.DataFrame</td>
+<td><code>pl</code>.<code>DataFrame</code></td>
 <td>Aggregated DataFrame.</td>
 </tr>
 </tbody>
@@ -277,7 +318,27 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="see-also" class="level2">
 <h2 class="anchored" data-anchor-id="see-also">See Also</h2>
-<p>aggregate_num : aggregation of a numeric variable. aggregate_freq : aggregation of the values counts of a categorical variable.</p>
+<p><a href="../reference/aggregate_num.html#pylifemap.aggregate_num"><code>aggregate_num</code></a> : aggregation of a numeric variable.</p>
+<p><a href="../reference/aggregate_freq.html#pylifemap.aggregate_freq"><code>aggregate_freq</code></a> : aggregation of the values counts of a categorical variable.</p>
+</section>
+<section id="examples" class="level2">
+<h2 class="anchored" data-anchor-id="examples">Examples</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">from</span> pylifemap <span class="im">import</span> aggregate_count</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> polars <span class="im">as</span> pl</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> d <span class="op">=</span> pl.DataFrame({<span class="st">"taxid"</span>: [<span class="dv">33154</span>, <span class="dv">33090</span>, <span class="dv">2</span>]})</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> aggregate_count(d)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>shape: (<span class="dv">5</span>, <span class="dv">2</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>┌───────┬─────┐</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>│ taxid ┆ n   │</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>│ <span class="op">---</span>   ┆ <span class="op">---</span> │</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>│ i32   ┆ u32 │</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>╞═══════╪═════╡</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>│ <span class="dv">0</span>     ┆ <span class="dv">3</span>   │</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>│ <span class="dv">2</span>     ┆ <span class="dv">1</span>   │</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>│ <span class="dv">2759</span>  ┆ <span class="dv">2</span>   │</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>│ <span class="dv">33090</span> ┆ <span class="dv">1</span>   │</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>│ <span class="dv">33154</span> ┆ <span class="dv">1</span>   │</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>└───────┴─────┘</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
