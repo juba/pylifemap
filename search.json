@@ -1,5 +1,168 @@
 [
   {
+    "objectID": "reference/aggregate_count.html",
+    "href": "reference/aggregate_count.html",
+    "title": "aggregate_count",
+    "section": "",
+    "text": "aggregate_count(d, *, result_col='n', taxid_col='taxid')\nNodes count aggregation along branches.\nAggregates nodes count in a DataFrame with taxonomy ids along the branches of the lifemap tree.\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nd\npd.DataFrame | pl.DataFrame\nDataFrame to aggregate data from.\nrequired\n\n\nresult_col\nstr\nName of the column created to store the counts, by default “n”.\n'n'\n\n\ntaxid_col\nstr\nName of the d column containing taxonomy ids, by default “taxid”.\n'taxid'\n\n\n\n\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\npl.DataFrame\nAggregated DataFrame.\n\n\n\n\n\n\naggregate_num : aggregation of a numeric variable.\naggregate_freq : aggregation of the values counts of a categorical variable.\n\n\n\n&gt;&gt;&gt; from pylifemap import aggregate_count\n&gt;&gt;&gt; import polars as pl\n&gt;&gt;&gt; d = pl.DataFrame({\"taxid\": [33154, 33090, 2]})\n&gt;&gt;&gt; aggregate_count(d)\nshape: (5, 2)\n┌───────┬─────┐\n│ taxid ┆ n   │\n│ ---   ┆ --- │\n│ i32   ┆ u32 │\n╞═══════╪═════╡\n│ 0     ┆ 3   │\n│ 2     ┆ 1   │\n│ 2759  ┆ 2   │\n│ 33090 ┆ 1   │\n│ 33154 ┆ 1   │\n└───────┴─────┘",
+    "crumbs": [
+      "Reference",
+      "Aggregation functions",
+      "aggregate_count"
+    ]
+  },
+  {
+    "objectID": "reference/aggregate_count.html#parameters",
+    "href": "reference/aggregate_count.html#parameters",
+    "title": "aggregate_count",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nd\npd.DataFrame | pl.DataFrame\nDataFrame to aggregate data from.\nrequired\n\n\nresult_col\nstr\nName of the column created to store the counts, by default “n”.\n'n'\n\n\ntaxid_col\nstr\nName of the d column containing taxonomy ids, by default “taxid”.\n'taxid'",
+    "crumbs": [
+      "Reference",
+      "Aggregation functions",
+      "aggregate_count"
+    ]
+  },
+  {
+    "objectID": "reference/aggregate_count.html#returns",
+    "href": "reference/aggregate_count.html#returns",
+    "title": "aggregate_count",
+    "section": "",
+    "text": "Type\nDescription\n\n\n\n\npl.DataFrame\nAggregated DataFrame.",
+    "crumbs": [
+      "Reference",
+      "Aggregation functions",
+      "aggregate_count"
+    ]
+  },
+  {
+    "objectID": "reference/aggregate_count.html#see-also",
+    "href": "reference/aggregate_count.html#see-also",
+    "title": "aggregate_count",
+    "section": "",
+    "text": "aggregate_num : aggregation of a numeric variable.\naggregate_freq : aggregation of the values counts of a categorical variable.",
+    "crumbs": [
+      "Reference",
+      "Aggregation functions",
+      "aggregate_count"
+    ]
+  },
+  {
+    "objectID": "reference/aggregate_count.html#examples",
+    "href": "reference/aggregate_count.html#examples",
+    "title": "aggregate_count",
+    "section": "",
+    "text": "&gt;&gt;&gt; from pylifemap import aggregate_count\n&gt;&gt;&gt; import polars as pl\n&gt;&gt;&gt; d = pl.DataFrame({\"taxid\": [33154, 33090, 2]})\n&gt;&gt;&gt; aggregate_count(d)\nshape: (5, 2)\n┌───────┬─────┐\n│ taxid ┆ n   │\n│ ---   ┆ --- │\n│ i32   ┆ u32 │\n╞═══════╪═════╡\n│ 0     ┆ 3   │\n│ 2     ┆ 1   │\n│ 2759  ┆ 2   │\n│ 33090 ┆ 1   │\n│ 33154 ┆ 1   │\n└───────┴─────┘",
+    "crumbs": [
+      "Reference",
+      "Aggregation functions",
+      "aggregate_count"
+    ]
+  },
+  {
+    "objectID": "reference/Lifemap.html",
+    "href": "reference/Lifemap.html",
+    "title": "Lifemap",
+    "section": "",
+    "text": "Lifemap\nLifemap(self, data, *, taxid_col='taxid', width=DEFAULT_WIDTH, height=DEFAULT_HEIGHT, zoom=5, legend_width=None)\nMain class allowing to create visualizations.",
+    "crumbs": [
+      "Reference",
+      "Lifemap class",
+      "Lifemap"
+    ]
+  },
+  {
+    "objectID": "reference/aggregate_cat.html",
+    "href": "reference/aggregate_cat.html",
+    "title": "aggregate_cat",
+    "section": "",
+    "text": "aggregate_cat\naggregate_cat(d, column, *, keep_leaves=False, taxid_col='taxid')"
+  },
+  {
+    "objectID": "development.html",
+    "href": "development.html",
+    "title": "Development notes",
+    "section": "",
+    "text": "To install pylifemap from git:\npip install git+https://github.com/juba/pylifemap.git"
+  },
+  {
+    "objectID": "development.html#install-from-git",
+    "href": "development.html#install-from-git",
+    "title": "Development notes",
+    "section": "",
+    "text": "To install pylifemap from git:\npip install git+https://github.com/juba/pylifemap.git"
+  },
+  {
+    "objectID": "development.html#install-fom-source",
+    "href": "development.html#install-fom-source",
+    "title": "Development notes",
+    "section": "Install fom source",
+    "text": "Install fom source\nIf you want to build pylifemap from source, you’ll have to follow these steps:\n\nInstall node.js\nInstall hatch dependency management system\nClone the pylifemap repository\nInstall Python dependencies with : hatch shell\nInstall JavaScript dependencies with : npm install --workspaces --include-root-workspace"
+  },
+  {
+    "objectID": "development.html#widget-javascript-modification-and-bundling",
+    "href": "development.html#widget-javascript-modification-and-bundling",
+    "title": "Development notes",
+    "section": "Widget JavaScript modification and bundling",
+    "text": "Widget JavaScript modification and bundling\nEach time the widget JavaScript or CSS code is modified in the src/js/ or packages/lifemapjs directories, it must be bundled with one of the following commands in pylifemap:\n# Bundle only once\nnpm run bundle\n# Or, to bundle and watch for code change\nnpm run dev\nThe result is put into src/pylifemap/static."
+  },
+  {
+    "objectID": "development.html#maintenance-notes",
+    "href": "development.html#maintenance-notes",
+    "title": "Development notes",
+    "section": "Maintenance notes",
+    "text": "Maintenance notes\n\nReleases\n\nChange version in NEWS.md and src/pylifemap/__about__.py\nRelease the Python package with hatch build and hatch publish in pylifemap\nTag the version in git\nCreate a release on Github\nBump to dev version in pyproject.toml and NEWS.md"
+  },
+  {
+    "objectID": "changelog.html",
+    "href": "changelog.html",
+    "title": "Changelog",
+    "section": "",
+    "text": "Development version, work in progress"
+  },
+  {
+    "objectID": "changelog.html#pylifemap-0.0.1-dev",
+    "href": "changelog.html#pylifemap-0.0.1-dev",
+    "title": "Changelog",
+    "section": "",
+    "text": "Development version, work in progress"
+  },
+  {
+    "objectID": "usage.html",
+    "href": "usage.html",
+    "title": "Usage",
+    "section": "",
+    "text": "Usage instructions."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "pylifemap",
+    "section": "",
+    "text": "pylifemap is a jupyter widget allowing to visualize taxonomy data on Lifemap."
+  },
+  {
+    "objectID": "index.html#overview",
+    "href": "index.html#overview",
+    "title": "pylifemap",
+    "section": "",
+    "text": "pylifemap is a jupyter widget allowing to visualize taxonomy data on Lifemap."
+  },
+  {
+    "objectID": "index.html#installation-and-usage",
+    "href": "index.html#installation-and-usage",
+    "title": "pylifemap",
+    "section": "Installation and usage",
+    "text": "Installation and usage\nFor the moment the package can only be installed from Github:\npip install git+https://github.com/juba/pylifemap.git\nUsage gives more detailed usage instructions."
+  },
+  {
+    "objectID": "index.html#credits",
+    "href": "index.html#credits",
+    "title": "pylifemap",
+    "section": "Credits",
+    "text": "Credits\n\nThe iucn data files in the data/ directory have been generated from The IUCN Red List of Threatened Species dataset (DOI 10.15468/0qnb58).\nVisualizations are powered by Open Layers and deck.gl.\nThe widget is developed thanks to the anywidget framework.\nThis documentation website is generated by Quarto and quartodoc."
+  },
+  {
     "objectID": "reference/aggregate_freq.html",
     "href": "reference/aggregate_freq.html",
     "title": "aggregate_freq",
@@ -57,18 +220,6 @@
       "Reference",
       "Aggregation functions",
       "aggregate_freq"
-    ]
-  },
-  {
-    "objectID": "reference/Lifemap.html",
-    "href": "reference/Lifemap.html",
-    "title": "Lifemap",
-    "section": "",
-    "text": "Lifemap\nLifemap(self, data, *, taxid_col='taxid', zoom=5, legend_width=None, width=DEFAULT_WIDTH, height=DEFAULT_HEIGHT)",
-    "crumbs": [
-      "Reference",
-      "Lifemap class",
-      "Lifemap"
     ]
   },
   {
@@ -144,81 +295,11 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "pylifemap",
-    "section": "",
-    "text": "pylifemap is a jupyter widget allowing to visualize taxonomy data on Lifemap."
-  },
-  {
-    "objectID": "index.html#overview",
-    "href": "index.html#overview",
-    "title": "pylifemap",
-    "section": "",
-    "text": "pylifemap is a jupyter widget allowing to visualize taxonomy data on Lifemap."
-  },
-  {
-    "objectID": "index.html#installation-and-usage",
-    "href": "index.html#installation-and-usage",
-    "title": "pylifemap",
-    "section": "Installation and usage",
-    "text": "Installation and usage\nFor the moment the package can only be installed from Github:\npip install git+https://github.com/juba/pylifemap.git\nUsage gives more detailed usage instructions."
-  },
-  {
-    "objectID": "index.html#credits",
-    "href": "index.html#credits",
-    "title": "pylifemap",
-    "section": "Credits",
-    "text": "Credits\n\nThe iucn data files in the data/ directory have been generated from The IUCN Red List of Threatened Species dataset (DOI 10.15468/0qnb58).\nVisualizations are powered by Open Layers and deck.gl.\nThe widget is developed thanks to the anywidget framework.\nThis documentation website is generated by Quarto and quartodoc."
-  },
-  {
-    "objectID": "development.html",
-    "href": "development.html",
-    "title": "Development notes",
-    "section": "",
-    "text": "To install pylifemap from git:\npip install git+https://github.com/juba/pylifemap.git"
-  },
-  {
-    "objectID": "development.html#install-from-git",
-    "href": "development.html#install-from-git",
-    "title": "Development notes",
-    "section": "",
-    "text": "To install pylifemap from git:\npip install git+https://github.com/juba/pylifemap.git"
-  },
-  {
-    "objectID": "development.html#install-fom-source",
-    "href": "development.html#install-fom-source",
-    "title": "Development notes",
-    "section": "Install fom source",
-    "text": "Install fom source\nIf you want to build pylifemap from source, you’ll have to follow these steps:\n\nInstall node.js\nInstall hatch dependency management system\nClone the pylifemap repository\nInstall Python dependencies with : hatch shell\nInstall JavaScript dependencies with : npm install --workspaces --include-root-workspace"
-  },
-  {
-    "objectID": "development.html#widget-javascript-modification-and-bundling",
-    "href": "development.html#widget-javascript-modification-and-bundling",
-    "title": "Development notes",
-    "section": "Widget JavaScript modification and bundling",
-    "text": "Widget JavaScript modification and bundling\nEach time the widget JavaScript or CSS code is modified in the src/js/ or packages/lifemapjs directories, it must be bundled with one of the following commands in pylifemap:\n# Bundle only once\nnpm run bundle\n# Or, to bundle and watch for code change\nnpm run dev\nThe result is put into src/pylifemap/static."
-  },
-  {
-    "objectID": "development.html#maintenance-notes",
-    "href": "development.html#maintenance-notes",
-    "title": "Development notes",
-    "section": "Maintenance notes",
-    "text": "Maintenance notes\n\nReleases\n\nChange version in NEWS.md and src/pylifemap/__about__.py\nRelease the Python package with hatch build and hatch publish in pylifemap\nTag the version in git\nCreate a release on Github\nBump to dev version in pyproject.toml and NEWS.md"
-  },
-  {
-    "objectID": "usage.html",
-    "href": "usage.html",
-    "title": "Usage",
-    "section": "",
-    "text": "Usage instructions."
-  },
-  {
     "objectID": "reference/index.html",
     "href": "reference/index.html",
     "title": "Reference",
     "section": "",
-    "text": "Main Lifemap class.\n\n\n\nLifemap\n\n\n\n\n\n\n\nFunctions to aggregate data along the branches of the lifemap tree.\n\n\n\naggregate_count\nNodes count aggregation along branches.\n\n\naggregate_num\nNumerical variable aggregation along branches.\n\n\naggregate_freq\nCategorical variable frequencies aggregation along branches.",
+    "text": "Main Lifemap class.\n\n\n\nLifemap\nMain class allowing to create visualizations.\n\n\n\n\n\n\nFunctions to aggregate data along the branches of the lifemap tree.\n\n\n\naggregate_count\nNodes count aggregation along branches.\n\n\naggregate_num\nNumerical variable aggregation along branches.\n\n\naggregate_freq\nCategorical variable frequencies aggregation along branches.",
     "crumbs": [
       "Reference"
     ]
@@ -228,7 +309,7 @@
     "href": "reference/index.html#lifemap-class",
     "title": "Reference",
     "section": "",
-    "text": "Main Lifemap class.\n\n\n\nLifemap",
+    "text": "Main Lifemap class.\n\n\n\nLifemap\nMain class allowing to create visualizations.",
     "crumbs": [
       "Reference"
     ]
@@ -242,86 +323,5 @@
     "crumbs": [
       "Reference"
     ]
-  },
-  {
-    "objectID": "reference/aggregate_count.html",
-    "href": "reference/aggregate_count.html",
-    "title": "aggregate_count",
-    "section": "",
-    "text": "aggregate_count(d, *, result_col='n', taxid_col='taxid')\nNodes count aggregation along branches.\nAggregates nodes count in a DataFrame with taxonomy ids along the branches of the lifemap tree.\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nd\npd.DataFrame | pl.DataFrame\nDataFrame to aggregate data from.\nrequired\n\n\nresult_col\nstr\nName of the column created to store the counts, by default “n”.\n'n'\n\n\ntaxid_col\nstr\nName of the d column containing taxonomy ids, by default “taxid”.\n'taxid'\n\n\n\n\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\npl.DataFrame\nAggregated DataFrame.\n\n\n\n\n\n\naggregate_num : aggregation of a numeric variable.\naggregate_freq : aggregation of the values counts of a categorical variable.\n\n\n\n&gt;&gt;&gt; from pylifemap import aggregate_count\n&gt;&gt;&gt; import polars as pl\n&gt;&gt;&gt; d = pl.DataFrame({\"taxid\": [33154, 33090, 2]})\n&gt;&gt;&gt; aggregate_count(d)\nshape: (5, 2)\n┌───────┬─────┐\n│ taxid ┆ n   │\n│ ---   ┆ --- │\n│ i32   ┆ u32 │\n╞═══════╪═════╡\n│ 0     ┆ 3   │\n│ 2     ┆ 1   │\n│ 2759  ┆ 2   │\n│ 33090 ┆ 1   │\n│ 33154 ┆ 1   │\n└───────┴─────┘",
-    "crumbs": [
-      "Reference",
-      "Aggregation functions",
-      "aggregate_count"
-    ]
-  },
-  {
-    "objectID": "reference/aggregate_count.html#parameters",
-    "href": "reference/aggregate_count.html#parameters",
-    "title": "aggregate_count",
-    "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nd\npd.DataFrame | pl.DataFrame\nDataFrame to aggregate data from.\nrequired\n\n\nresult_col\nstr\nName of the column created to store the counts, by default “n”.\n'n'\n\n\ntaxid_col\nstr\nName of the d column containing taxonomy ids, by default “taxid”.\n'taxid'",
-    "crumbs": [
-      "Reference",
-      "Aggregation functions",
-      "aggregate_count"
-    ]
-  },
-  {
-    "objectID": "reference/aggregate_count.html#returns",
-    "href": "reference/aggregate_count.html#returns",
-    "title": "aggregate_count",
-    "section": "",
-    "text": "Type\nDescription\n\n\n\n\npl.DataFrame\nAggregated DataFrame.",
-    "crumbs": [
-      "Reference",
-      "Aggregation functions",
-      "aggregate_count"
-    ]
-  },
-  {
-    "objectID": "reference/aggregate_count.html#see-also",
-    "href": "reference/aggregate_count.html#see-also",
-    "title": "aggregate_count",
-    "section": "",
-    "text": "aggregate_num : aggregation of a numeric variable.\naggregate_freq : aggregation of the values counts of a categorical variable.",
-    "crumbs": [
-      "Reference",
-      "Aggregation functions",
-      "aggregate_count"
-    ]
-  },
-  {
-    "objectID": "reference/aggregate_count.html#examples",
-    "href": "reference/aggregate_count.html#examples",
-    "title": "aggregate_count",
-    "section": "",
-    "text": "&gt;&gt;&gt; from pylifemap import aggregate_count\n&gt;&gt;&gt; import polars as pl\n&gt;&gt;&gt; d = pl.DataFrame({\"taxid\": [33154, 33090, 2]})\n&gt;&gt;&gt; aggregate_count(d)\nshape: (5, 2)\n┌───────┬─────┐\n│ taxid ┆ n   │\n│ ---   ┆ --- │\n│ i32   ┆ u32 │\n╞═══════╪═════╡\n│ 0     ┆ 3   │\n│ 2     ┆ 1   │\n│ 2759  ┆ 2   │\n│ 33090 ┆ 1   │\n│ 33154 ┆ 1   │\n└───────┴─────┘",
-    "crumbs": [
-      "Reference",
-      "Aggregation functions",
-      "aggregate_count"
-    ]
-  },
-  {
-    "objectID": "reference/aggregate_cat.html",
-    "href": "reference/aggregate_cat.html",
-    "title": "aggregate_cat",
-    "section": "",
-    "text": "aggregate_cat\naggregate_cat(d, column, *, keep_leaves=False, taxid_col='taxid')"
-  },
-  {
-    "objectID": "changelog.html",
-    "href": "changelog.html",
-    "title": "Changelog",
-    "section": "",
-    "text": "Development version, work in progress"
-  },
-  {
-    "objectID": "changelog.html#pylifemap-0.0.1-dev",
-    "href": "changelog.html#pylifemap-0.0.1-dev",
-    "title": "Changelog",
-    "section": "",
-    "text": "Development version, work in progress"
   }
 ]
