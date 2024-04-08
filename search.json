@@ -1,5 +1,397 @@
 [
   {
+    "objectID": "reference/aggregate_count.html",
+    "href": "reference/aggregate_count.html",
+    "title": "aggregate_count",
+    "section": "",
+    "text": "aggregate_count(d, *, result_col='n', taxid_col='taxid')\nNodes count aggregation along branches.\nAggregates nodes count in a DataFrame with taxonomy ids along the branches of the lifemap tree.\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nd\npd.DataFrame | pl.DataFrame\nDataFrame to aggregate data from.\nrequired\n\n\nresult_col\nstr\nName of the column created to store the counts, by default “n”.\n'n'\n\n\ntaxid_col\nstr\nName of the d column containing taxonomy ids, by default “taxid”.\n'taxid'\n\n\n\n\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\npl.DataFrame\nAggregated DataFrame.\n\n\n\n\n\n\naggregate_num : aggregation of a numeric variable.\naggregate_freq : aggregation of the values counts of a categorical variable.\n\n\n\n&gt;&gt;&gt; from pylifemap import aggregate_count\n&gt;&gt;&gt; import polars as pl\n&gt;&gt;&gt; d = pl.DataFrame({\"taxid\": [33154, 33090, 2]})\n&gt;&gt;&gt; aggregate_count(d)\nshape: (5, 2)\n┌───────┬─────┐\n│ taxid ┆ n   │\n│ ---   ┆ --- │\n│ i32   ┆ u32 │\n╞═══════╪═════╡\n│ 0     ┆ 3   │\n│ 2     ┆ 1   │\n│ 2759  ┆ 2   │\n│ 33090 ┆ 1   │\n│ 33154 ┆ 1   │\n└───────┴─────┘",
+    "crumbs": [
+      "Reference",
+      "Data aggregation",
+      "aggregate_count"
+    ]
+  },
+  {
+    "objectID": "reference/aggregate_count.html#parameters",
+    "href": "reference/aggregate_count.html#parameters",
+    "title": "aggregate_count",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nd\npd.DataFrame | pl.DataFrame\nDataFrame to aggregate data from.\nrequired\n\n\nresult_col\nstr\nName of the column created to store the counts, by default “n”.\n'n'\n\n\ntaxid_col\nstr\nName of the d column containing taxonomy ids, by default “taxid”.\n'taxid'",
+    "crumbs": [
+      "Reference",
+      "Data aggregation",
+      "aggregate_count"
+    ]
+  },
+  {
+    "objectID": "reference/aggregate_count.html#returns",
+    "href": "reference/aggregate_count.html#returns",
+    "title": "aggregate_count",
+    "section": "",
+    "text": "Type\nDescription\n\n\n\n\npl.DataFrame\nAggregated DataFrame.",
+    "crumbs": [
+      "Reference",
+      "Data aggregation",
+      "aggregate_count"
+    ]
+  },
+  {
+    "objectID": "reference/aggregate_count.html#see-also",
+    "href": "reference/aggregate_count.html#see-also",
+    "title": "aggregate_count",
+    "section": "",
+    "text": "aggregate_num : aggregation of a numeric variable.\naggregate_freq : aggregation of the values counts of a categorical variable.",
+    "crumbs": [
+      "Reference",
+      "Data aggregation",
+      "aggregate_count"
+    ]
+  },
+  {
+    "objectID": "reference/aggregate_count.html#examples",
+    "href": "reference/aggregate_count.html#examples",
+    "title": "aggregate_count",
+    "section": "",
+    "text": "&gt;&gt;&gt; from pylifemap import aggregate_count\n&gt;&gt;&gt; import polars as pl\n&gt;&gt;&gt; d = pl.DataFrame({\"taxid\": [33154, 33090, 2]})\n&gt;&gt;&gt; aggregate_count(d)\nshape: (5, 2)\n┌───────┬─────┐\n│ taxid ┆ n   │\n│ ---   ┆ --- │\n│ i32   ┆ u32 │\n╞═══════╪═════╡\n│ 0     ┆ 3   │\n│ 2     ┆ 1   │\n│ 2759  ┆ 2   │\n│ 33090 ┆ 1   │\n│ 33154 ┆ 1   │\n└───────┴─────┘",
+    "crumbs": [
+      "Reference",
+      "Data aggregation",
+      "aggregate_count"
+    ]
+  },
+  {
+    "objectID": "reference/Lifemap.layer_screengrid.html",
+    "href": "reference/Lifemap.layer_screengrid.html",
+    "title": "Lifemap.layer_screengrid",
+    "section": "",
+    "text": "Lifemap.layer_screengrid(cell_size=30, extruded=False, opacity=0.5)\nAdd a screengrid layer.\nThis layer is used to display observations distribution. It should be noted that the visualization is highly sensitive to the zoom level and the map extent.\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ncell_size\nint\nScreen grid cell size, in pixels, by default 30\n30\n\n\nextruded\n(bool, optionals)\nIf True, show the grid as extruded, by default False\nFalse\n\n\nopacity\nfloat\nScreengrid opacity as a floating point number between 0 and 1, by default 0.5\n0.5\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nLifemap\nA Lifemap visualization object.\n\n\n\n\n\n\n&gt;&gt;&gt; import polars as pl\n&gt;&gt;&gt; from pylifemap import Lifemap\n&gt;&gt;&gt; d = pl.DataFrame({\n...     \"taxid\": [9685, 9615, 9994, 2467430, 2514524, 2038938, 1021470, 1415565, 1928562, 1397240, 230741],\n... })\n&gt;&gt;&gt; (\n...     Lifemap(d)\n...     .layer_screengrid()\n...     .show()\n... )",
+    "crumbs": [
+      "Reference",
+      "Visualization",
+      "Lifemap.layer_screengrid"
+    ]
+  },
+  {
+    "objectID": "reference/Lifemap.layer_screengrid.html#parameters",
+    "href": "reference/Lifemap.layer_screengrid.html#parameters",
+    "title": "Lifemap.layer_screengrid",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ncell_size\nint\nScreen grid cell size, in pixels, by default 30\n30\n\n\nextruded\n(bool, optionals)\nIf True, show the grid as extruded, by default False\nFalse\n\n\nopacity\nfloat\nScreengrid opacity as a floating point number between 0 and 1, by default 0.5\n0.5",
+    "crumbs": [
+      "Reference",
+      "Visualization",
+      "Lifemap.layer_screengrid"
+    ]
+  },
+  {
+    "objectID": "reference/Lifemap.layer_screengrid.html#returns",
+    "href": "reference/Lifemap.layer_screengrid.html#returns",
+    "title": "Lifemap.layer_screengrid",
+    "section": "",
+    "text": "Type\nDescription\n\n\n\n\nLifemap\nA Lifemap visualization object.",
+    "crumbs": [
+      "Reference",
+      "Visualization",
+      "Lifemap.layer_screengrid"
+    ]
+  },
+  {
+    "objectID": "reference/Lifemap.layer_screengrid.html#examples",
+    "href": "reference/Lifemap.layer_screengrid.html#examples",
+    "title": "Lifemap.layer_screengrid",
+    "section": "",
+    "text": "&gt;&gt;&gt; import polars as pl\n&gt;&gt;&gt; from pylifemap import Lifemap\n&gt;&gt;&gt; d = pl.DataFrame({\n...     \"taxid\": [9685, 9615, 9994, 2467430, 2514524, 2038938, 1021470, 1415565, 1928562, 1397240, 230741],\n... })\n&gt;&gt;&gt; (\n...     Lifemap(d)\n...     .layer_screengrid()\n...     .show()\n... )",
+    "crumbs": [
+      "Reference",
+      "Visualization",
+      "Lifemap.layer_screengrid"
+    ]
+  },
+  {
+    "objectID": "reference/Lifemap.html",
+    "href": "reference/Lifemap.html",
+    "title": "Lifemap",
+    "section": "",
+    "text": "Lifemap(self, data, *, taxid_col='taxid', width=DEFAULT_WIDTH, height=DEFAULT_HEIGHT, zoom=5, legend_width=None)\nBuild visualization.\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ndata\npl.DataFrame | pd.DataFrame\nVisualization data.\nrequired\n\n\ntaxid_col\nstr\nName of the data column with taxonomy ids, by default \"taxid\"\n'taxid'\n\n\nwidth\nint | str\nLifemap visualization width, in pixels or CSS units, by default DEFAULT_WIDTH\nDEFAULT_WIDTH\n\n\nheight\nint | str\nLifemap visualization height, in pixels or CSS units, by default DEFAULT_HEIGHT\nDEFAULT_HEIGHT\n\n\nzoom\nint\nDefault Lifemap zoom level, by default 5\n5\n\n\nlegend_width\nint | None\nLegend width in pixels, by default None\nNone\n\n\n\n\n\n\n&gt;&gt;&gt; import polars as pl\n&gt;&gt;&gt; from pylifemap import Lifemap\n&gt;&gt;&gt; d = pl.DataFrame({\"taxid\": [9685, 9615, 9994]})\n&gt;&gt;&gt; (\n...     Lifemap(d, width=\"100%\", height=\"100vh\")\n...     .layer_points()\n...     .show()\n&gt;&gt;&gt; )\n\n\n\n\n\n\nName\nDescription\n\n\n\n\npylifemap.Lifemap.layer_points\nAdd a points layer.\n\n\npylifemap.Lifemap.layer_lines\nAdd a lines layer.\n\n\npylifemap.Lifemap.layer_donuts\nAdd a donuts layer.\n\n\npylifemap.Lifemap.layer_heatmap\nAdd a heatmap layer.\n\n\npylifemap.Lifemap.layer_screengrid\nAdd a screengrid layer.\n\n\npylifemap.Lifemap.show\nDisplay the Jupyter widget for this instance.\n\n\npylifemap.Lifemap.save\nSave the Jupyter widget for this instance to an HTML file.",
+    "crumbs": [
+      "Reference",
+      "Visualization",
+      "Lifemap"
+    ]
+  },
+  {
+    "objectID": "reference/Lifemap.html#parameters",
+    "href": "reference/Lifemap.html#parameters",
+    "title": "Lifemap",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ndata\npl.DataFrame | pd.DataFrame\nVisualization data.\nrequired\n\n\ntaxid_col\nstr\nName of the data column with taxonomy ids, by default \"taxid\"\n'taxid'\n\n\nwidth\nint | str\nLifemap visualization width, in pixels or CSS units, by default DEFAULT_WIDTH\nDEFAULT_WIDTH\n\n\nheight\nint | str\nLifemap visualization height, in pixels or CSS units, by default DEFAULT_HEIGHT\nDEFAULT_HEIGHT\n\n\nzoom\nint\nDefault Lifemap zoom level, by default 5\n5\n\n\nlegend_width\nint | None\nLegend width in pixels, by default None\nNone",
+    "crumbs": [
+      "Reference",
+      "Visualization",
+      "Lifemap"
+    ]
+  },
+  {
+    "objectID": "reference/Lifemap.html#examples",
+    "href": "reference/Lifemap.html#examples",
+    "title": "Lifemap",
+    "section": "",
+    "text": "&gt;&gt;&gt; import polars as pl\n&gt;&gt;&gt; from pylifemap import Lifemap\n&gt;&gt;&gt; d = pl.DataFrame({\"taxid\": [9685, 9615, 9994]})\n&gt;&gt;&gt; (\n...     Lifemap(d, width=\"100%\", height=\"100vh\")\n...     .layer_points()\n...     .show()\n&gt;&gt;&gt; )",
+    "crumbs": [
+      "Reference",
+      "Visualization",
+      "Lifemap"
+    ]
+  },
+  {
+    "objectID": "reference/Lifemap.html#methods",
+    "href": "reference/Lifemap.html#methods",
+    "title": "Lifemap",
+    "section": "",
+    "text": "Name\nDescription\n\n\n\n\npylifemap.Lifemap.layer_points\nAdd a points layer.\n\n\npylifemap.Lifemap.layer_lines\nAdd a lines layer.\n\n\npylifemap.Lifemap.layer_donuts\nAdd a donuts layer.\n\n\npylifemap.Lifemap.layer_heatmap\nAdd a heatmap layer.\n\n\npylifemap.Lifemap.layer_screengrid\nAdd a screengrid layer.\n\n\npylifemap.Lifemap.show\nDisplay the Jupyter widget for this instance.\n\n\npylifemap.Lifemap.save\nSave the Jupyter widget for this instance to an HTML file.",
+    "crumbs": [
+      "Reference",
+      "Visualization",
+      "Lifemap"
+    ]
+  },
+  {
+    "objectID": "reference/Lifemap.layer_heatmap.html",
+    "href": "reference/Lifemap.layer_heatmap.html",
+    "title": "Lifemap.layer_heatmap",
+    "section": "",
+    "text": "Lifemap.layer_heatmap(radius=30, intensity=5, threshold=0.05, opacity=0.5, color_range=None)\nAdd a heatmap layer.\nThis layer is used to display observations distribution.\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nradius\nfloat\nHeatmap radius, by default 30\n30\n\n\nintensity\nfloat\nHeatmap intensity, by default 5\n5\n\n\nthreshold\nfloat\nHeatmap threshold, by default 0.05\n0.05\n\n\nopacity\nfloat\nHeatmap opacity as a floating number between 0 and 1, by default 0.5\n0.5\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nLifemap\nA Lifemap visualization object.\n\n\n\n\n\n\n&gt;&gt;&gt; import polars as pl\n&gt;&gt;&gt; from pylifemap import Lifemap\n&gt;&gt;&gt; d = pl.DataFrame({\n...     \"taxid\": [9685, 9615, 9994, 2467430, 2514524, 2038938, 1021470, 1415565, 1928562, 1397240, 230741],\n... })\n&gt;&gt;&gt; (\n...     Lifemap(d)\n...     .layer_heatmap()\n...     .show()\n... )",
+    "crumbs": [
+      "Reference",
+      "Visualization",
+      "Lifemap.layer_heatmap"
+    ]
+  },
+  {
+    "objectID": "reference/Lifemap.layer_heatmap.html#parameters",
+    "href": "reference/Lifemap.layer_heatmap.html#parameters",
+    "title": "Lifemap.layer_heatmap",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nradius\nfloat\nHeatmap radius, by default 30\n30\n\n\nintensity\nfloat\nHeatmap intensity, by default 5\n5\n\n\nthreshold\nfloat\nHeatmap threshold, by default 0.05\n0.05\n\n\nopacity\nfloat\nHeatmap opacity as a floating number between 0 and 1, by default 0.5\n0.5",
+    "crumbs": [
+      "Reference",
+      "Visualization",
+      "Lifemap.layer_heatmap"
+    ]
+  },
+  {
+    "objectID": "reference/Lifemap.layer_heatmap.html#returns",
+    "href": "reference/Lifemap.layer_heatmap.html#returns",
+    "title": "Lifemap.layer_heatmap",
+    "section": "",
+    "text": "Type\nDescription\n\n\n\n\nLifemap\nA Lifemap visualization object.",
+    "crumbs": [
+      "Reference",
+      "Visualization",
+      "Lifemap.layer_heatmap"
+    ]
+  },
+  {
+    "objectID": "reference/Lifemap.layer_heatmap.html#examples",
+    "href": "reference/Lifemap.layer_heatmap.html#examples",
+    "title": "Lifemap.layer_heatmap",
+    "section": "",
+    "text": "&gt;&gt;&gt; import polars as pl\n&gt;&gt;&gt; from pylifemap import Lifemap\n&gt;&gt;&gt; d = pl.DataFrame({\n...     \"taxid\": [9685, 9615, 9994, 2467430, 2514524, 2038938, 1021470, 1415565, 1928562, 1397240, 230741],\n... })\n&gt;&gt;&gt; (\n...     Lifemap(d)\n...     .layer_heatmap()\n...     .show()\n... )",
+    "crumbs": [
+      "Reference",
+      "Visualization",
+      "Lifemap.layer_heatmap"
+    ]
+  },
+  {
+    "objectID": "reference/Lifemap.save.html",
+    "href": "reference/Lifemap.save.html",
+    "title": "Lifemap.save",
+    "section": "",
+    "text": "Lifemap.save(path, title='Lifemap')\nSave the Jupyter widget for this instance to an HTML file.\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\npath\nstr | Path\nPath to the HTML file to save the widget.\nrequired\n\n\ntitle\nstr\nOptional HTML page title, by default “Lifemap”\n'Lifemap'\n\n\n\n\n\n\n&gt;&gt;&gt; import polars as pl\n&gt;&gt;&gt; from pylifemap import Lifemap\n&gt;&gt;&gt; d = pl.DataFrame({\"taxid\": [9685, 9615, 9994]})\n&gt;&gt;&gt; (\n...     Lifemap(d, width=\"100%\", height=\"100vh\")\n...     .layer_points()\n...     .save(\"lifemap.html\", title=\"Example lifemap\")\n... )",
+    "crumbs": [
+      "Reference",
+      "Visualization",
+      "Lifemap.save"
+    ]
+  },
+  {
+    "objectID": "reference/Lifemap.save.html#parameters",
+    "href": "reference/Lifemap.save.html#parameters",
+    "title": "Lifemap.save",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\npath\nstr | Path\nPath to the HTML file to save the widget.\nrequired\n\n\ntitle\nstr\nOptional HTML page title, by default “Lifemap”\n'Lifemap'",
+    "crumbs": [
+      "Reference",
+      "Visualization",
+      "Lifemap.save"
+    ]
+  },
+  {
+    "objectID": "reference/Lifemap.save.html#examples",
+    "href": "reference/Lifemap.save.html#examples",
+    "title": "Lifemap.save",
+    "section": "",
+    "text": "&gt;&gt;&gt; import polars as pl\n&gt;&gt;&gt; from pylifemap import Lifemap\n&gt;&gt;&gt; d = pl.DataFrame({\"taxid\": [9685, 9615, 9994]})\n&gt;&gt;&gt; (\n...     Lifemap(d, width=\"100%\", height=\"100vh\")\n...     .layer_points()\n...     .save(\"lifemap.html\", title=\"Example lifemap\")\n... )",
+    "crumbs": [
+      "Reference",
+      "Visualization",
+      "Lifemap.save"
+    ]
+  },
+  {
+    "objectID": "reference/Lifemap.show.html",
+    "href": "reference/Lifemap.show.html",
+    "title": "Lifemap.show",
+    "section": "",
+    "text": "Lifemap.show\nLifemap.show()\nDisplay the Jupyter widget for this instance.\nIf we are in a notebook environment, use display. Otherwise, export widget to an HTML file and open it in a browser if possible.",
+    "crumbs": [
+      "Reference",
+      "Visualization",
+      "Lifemap.show"
+    ]
+  },
+  {
+    "objectID": "development.html",
+    "href": "development.html",
+    "title": "Development notes",
+    "section": "",
+    "text": "To install pylifemap from git:\npip install git+https://github.com/juba/pylifemap.git"
+  },
+  {
+    "objectID": "development.html#install-from-git",
+    "href": "development.html#install-from-git",
+    "title": "Development notes",
+    "section": "",
+    "text": "To install pylifemap from git:\npip install git+https://github.com/juba/pylifemap.git"
+  },
+  {
+    "objectID": "development.html#install-fom-source",
+    "href": "development.html#install-fom-source",
+    "title": "Development notes",
+    "section": "Install fom source",
+    "text": "Install fom source\nIf you want to build pylifemap from source, you’ll have to follow these steps:\n\nInstall node.js\nInstall hatch dependency management system\nClone the pylifemap repository\nInstall Python dependencies with : hatch shell\nInstall JavaScript dependencies with : npm install --workspaces --include-root-workspace"
+  },
+  {
+    "objectID": "development.html#widget-javascript-modification-and-bundling",
+    "href": "development.html#widget-javascript-modification-and-bundling",
+    "title": "Development notes",
+    "section": "Widget JavaScript modification and bundling",
+    "text": "Widget JavaScript modification and bundling\nEach time the widget JavaScript or CSS code is modified in the src/js/ or packages/lifemapjs/ directories, it must be bundled with one of the following commands in pylifemap:\n# Bundle\nnpm run bundle\n# Build (bundle + minify)\nnpm run build\n# Bundle and watch for code change\nnpm run dev\nThe result is put into src/pylifemap/static."
+  },
+  {
+    "objectID": "development.html#tests",
+    "href": "development.html#tests",
+    "title": "Development notes",
+    "section": "Tests",
+    "text": "Tests\nPython tests are in the tests directory and can be run with:\nhatch run test"
+  },
+  {
+    "objectID": "development.html#documentation",
+    "href": "development.html#documentation",
+    "title": "Development notes",
+    "section": "Documentation",
+    "text": "Documentation\nThe package documentation is in doc/. It is managed by quarto and quartodoc.\nTo build it in HTML format in doc/_site/you can run:\nhatch run doc"
+  },
+  {
+    "objectID": "development.html#maintenance-notes",
+    "href": "development.html#maintenance-notes",
+    "title": "Development notes",
+    "section": "Maintenance notes",
+    "text": "Maintenance notes\n\nReleases\n\nChange version in NEWS.md and src/pylifemap/__about__.py\nRelease the Python package with hatch build and hatch publish in pylifemap\nTag the version in git\nCreate a release on Github\nBump to dev version in pyproject.toml and NEWS.md"
+  },
+  {
+    "objectID": "changelog.html",
+    "href": "changelog.html",
+    "title": "Changelog",
+    "section": "",
+    "text": "Development version, work in progress"
+  },
+  {
+    "objectID": "changelog.html#pylifemap-0.0.1-dev",
+    "href": "changelog.html#pylifemap-0.0.1-dev",
+    "title": "Changelog",
+    "section": "",
+    "text": "Development version, work in progress"
+  },
+  {
+    "objectID": "usage.html",
+    "href": "usage.html",
+    "title": "Usage",
+    "section": "",
+    "text": "To create a Lifemap data visualization, you will have to follow these steps:"
+  },
+  {
+    "objectID": "usage.html#prepare-your-data",
+    "href": "usage.html#prepare-your-data",
+    "title": "Usage",
+    "section": "Prepare your data",
+    "text": "Prepare your data\nThe date you want to visualize on the Lifemap tree of life must be in a pandas or polars DataFrame. They must contain at least observations (species) as rows, and variables as columns, and at least one column must contain the NCBI taxonomy identifier of the species.\npylifemap includes an example polars data file generated from The IUCN Red List of Threatened Species. It is a CSV file with the Red List category (in 2022) of more than 84000 species.\nWe can import it as a polars DataFrame with the following code:\n\nimport polars as pl\n\niucn = pl.read_csv(\n    \"https://raw.githubusercontent.com/juba/pylifemap/main/data/iucn.csv\"\n)\n\nIf we display the resulting table, we can see that it only has two columns, one called taxid which contains the species identifiers, and another called status with the Red List category of each species:\n\niucn\n\n\n\nshape: (84_981, 2)\n\n\n\ntaxid\nstatus\n\n\ni64\nstr\n\n\n\n\n651506\n\"Data Deficient…\n\n\n2803960\n\"Critically End…\n\n\n143610\n\"Critically End…\n\n\n2760993\n\"Least Concern\"\n\n\n72259\n\"Least Concern\"\n\n\n…\n…\n\n\n337230\n\"Least Concern\"\n\n\n442623\n\"Vulnerable\"\n\n\n2303643\n\"Critically End…\n\n\n442625\n\"Critically End…\n\n\n442626\n\"Least Concern\""
+  },
+  {
+    "objectID": "usage.html#initialize-a-lifemap-object",
+    "href": "usage.html#initialize-a-lifemap-object",
+    "title": "Usage",
+    "section": "Initialize a Lifemap object",
+    "text": "Initialize a Lifemap object\nThe next step is to create a new Lifemap object. To do this we have to pass it our DataFrame, as well as the name of the column with our taxonomy identifiers[^if your column is named “taxid” you can omit the taxid_col argument as it is its default value.]:\n\nfrom pylifemap import Lifemap\n\nLifemap(iucn, taxid_col=\"taxid\")\n\n&lt;LifemapWidget&gt;\n\n\nWe could have passed other arguments such as the width and height of our visualization, either as a number of pixels or as a CSS units.\nFor example, the following intialization would make the visualization take the full available width, and an height of 800 pixels.\n\nLifemap(iucn, taxid_col=\"taxid\", width=\"100%\", height=800)"
+  },
+  {
+    "objectID": "usage.html#add-visualization-layers",
+    "href": "usage.html#add-visualization-layers",
+    "title": "Usage",
+    "section": "Add visualization layers",
+    "text": "Add visualization layers\nAfter initializing our Lifemap object, we have to add visualization layers to create graphical representations. There are several different layers available:\n\n\n\n\nLayer\n\n\nDescription\n\n\n\n\n\n\nlayer_points\n\n\nDisplays each observation with a point. Radius and color can be dependent of an attribute in the DataFrame.\n\n\n\n\nlayer_lines\n\n\nUsing aggregated data, highlights branches of the tree by lines of varying width and color.\n\n\n\n\nlayer_donuts\n\n\nDisplays aggregated categorical data as donut charts.\n\n\n\n\nlayer_heatmap\n\n\nDisplays a heatmap of the observations distribution in the tree.\n\n\n\n\nlayer_screengrid\n\n\nDisplays the observations distribution with a colored grid with fixed-size cells..\n\n\n\n\nTo add a layer, we just have to call the corresponding layer_ method of our Lifemap object. For example, to add a points layer:\n\néLifemap(iucn, taxid_col=\"taxid\").layer_points()\n\nWe can add several layers by calling several methods. For example we could display a heatmap layer, and a points layer above it:\n\nLifemap(iucn, taxid_col=\"taxid\").layer_heatmap().layer_points()"
+  },
+  {
+    "objectID": "usage.html#show-or-save-the-visualization",
+    "href": "usage.html#show-or-save-the-visualization",
+    "title": "Usage",
+    "section": "Show or save the visualization",
+    "text": "Show or save the visualization\nJust adding layers is not sufficient to see our visualization. For it to appear, we have to call the show() method:\n\nLifemap(iucn, taxid_col=\"taxid\").layer_points().show()\n\n\n\n\nWe can also save it to an HTML file which can be opened later in a browser by using the save() method:\n\nLifemap(iucn, taxid_col=\"taxid\").layer_points().save(\"lifemap.html\")"
+  },
+  {
+    "objectID": "usage.html#customize-the-layers",
+    "href": "usage.html#customize-the-layers",
+    "title": "Usage",
+    "section": "Customize the layers",
+    "text": "Customize the layers\nEach layer accepts a certain number of arguments to customize its appearance. For example we can change the radius and opacity of our points and make their color depend on their status value:\n\n(\n    Lifemap(iucn, taxid_col=\"taxid\")\n    .layer_points(fill_col=\"status\", radius=3, opacity=0.5)\n    .show()\n)"
+  },
+  {
+    "objectID": "usage.html#aggregate-data",
+    "href": "usage.html#aggregate-data",
+    "title": "Usage",
+    "section": "Aggregate data",
+    "text": "Aggregate data\npylifemap provides several aggregation functions that allow to aggregate data along the branches of the tree:\n\n\n\n\nFunction\n\n\nDescription\n\n\n\n\n\n\naggregate_count\n\n\nAggregates the number of children of each tree node.\n\n\n\n\naggregate_num\n\n\nAggregates a numerical variable along the tree branches with a given function (sum, mean, max…).\n\n\n\n\naggregate_freq\n\n\nAggregates the frequencies of the levels of a categorical variable.\n\n\n\n\nFor example, we could filter out in our data set the species which have an “extinct” status:\n\niucn_extinct = iucn.filter(pl.col(\"status\") == \"Extinct\")\n\nWe can then aggregate their count along the branches with aggregate_count:\n\nfrom pylifemap import aggregate_count\niucn_extinct_agg = aggregate_count(iucn_extinct)\niucn_extinct_agg\n\n\n\nshape: (768, 2)\n\n\n\ntaxid\nn\n\n\ni32\nu32\n\n\n\n\n0\n198\n\n\n2759\n198\n\n\n3193\n21\n\n\n3268\n1\n\n\n3398\n20\n\n\n…\n…\n\n\n3036923\n1\n\n\n3041918\n1\n\n\n3055989\n1\n\n\n3072905\n2\n\n\n3076244\n1\n\n\n\n\n\n\n\nFinally, we can represent this new dataset with a lines layer.\n\n(\n    Lifemap(iucn_extinct_agg)\n    .layer_lines(color_col=\"n\", width_col=\"n\", label=\"Extinct species\")\n    .show()\n)"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "pylifemap",
+    "section": "",
+    "text": "pylifemap is a jupyter widget allowing to visualize taxonomy data on Lifemap."
+  },
+  {
+    "objectID": "index.html#overview",
+    "href": "index.html#overview",
+    "title": "pylifemap",
+    "section": "",
+    "text": "pylifemap is a jupyter widget allowing to visualize taxonomy data on Lifemap."
+  },
+  {
+    "objectID": "index.html#installation-and-usage",
+    "href": "index.html#installation-and-usage",
+    "title": "pylifemap",
+    "section": "Installation and usage",
+    "text": "Installation and usage\nFor the moment the package can only be installed from Github:\npip install git+https://github.com/juba/pylifemap.git\nUsage gives more detailed usage instructions."
+  },
+  {
+    "objectID": "index.html#credits",
+    "href": "index.html#credits",
+    "title": "pylifemap",
+    "section": "Credits",
+    "text": "Credits\n\nThe iucn data files in the data/ directory have been generated from The IUCN Red List of Threatened Species dataset (DOI 10.15468/0qnb58).\nVisualizations are powered by Open Layers and deck.gl.\nThe widget is developed thanks to the anywidget framework.\nThis documentation website is generated by Quarto and quartodoc."
+  },
+  {
     "objectID": "reference/aggregate_freq.html",
     "href": "reference/aggregate_freq.html",
     "title": "aggregate_freq",
@@ -57,114 +449,6 @@
       "Reference",
       "Data aggregation",
       "aggregate_freq"
-    ]
-  },
-  {
-    "objectID": "reference/Lifemap.layer_lines.html",
-    "href": "reference/Lifemap.layer_lines.html",
-    "title": "Lifemap.layer_lines",
-    "section": "",
-    "text": "Lifemap.layer_lines(width=None, width_col=None, color_col=None, scheme=None, opacity=0.8, popup=False, label=None)\nAdd a lines layer.\nThis layer can be applied to data generated by aggregate_num or aggregate_count.\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nwidth\nfloat | None\nBase line width, by default None\nNone\n\n\nwidth_col\nstr | None\nName of numeric DataFrame column to compute line width, by default None\nNone\n\n\ncolor_col\nstr | None\nName of numeric DataFrame column to determine line color, by default None\nNone\n\n\nscheme\nstr | None\nColor scheme for points color. If color_col is defined, it is the name of an Observable Plot color scale. Otherwise, it is an hexadecimal color value, by default None\nNone\n\n\nopacity\nfloat | None\nLine opacity as a floating number between 0 and 1, by default 0.8\n0.8\n\n\npopup\nbool | None\nTODO: doesn’t work for the moment. If True, display informations in a popup when a point is clicked, by default False\nFalse\n\n\nlabel\nstr | None\nLegend title for this layer if color_col is defined. If None, the value of color_col is used.\nNone\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nLifemap\nA Lifemap visualization object.\n\n\n\n\n\n\n&gt;&gt;&gt; import polars as pl\n&gt;&gt;&gt; from pylifemap import Lifemap, aggregate_num\n&gt;&gt;&gt; d = pl.DataFrame({\n...     \"taxid\": [9685, 9615, 9994, 2467430, 2514524, 2038938, 1021470, 1415565, 1928562, 1397240, 230741],\n...     \"value\": [ 7.4,  2.5,  8.3,     1.0,     1.4,     5.6,     4.6,     3.4,     2.3,     2.8,    3.1]\n... })\n&gt;&gt;&gt; d = aggregate_num(d, column=\"value\", fn=\"mean\")\n&gt;&gt;&gt; (\n...     Lifemap(d)\n...     .layer_lines(width_col=\"value\", color_col=\"value\")\n...     .show()\n... )\n\n\n\naggregate_num : aggregation of a numeric variable.\naggregate_count : aggregation of the number of observations.",
-    "crumbs": [
-      "Reference",
-      "Visualization",
-      "Lifemap.layer_lines"
-    ]
-  },
-  {
-    "objectID": "reference/Lifemap.layer_lines.html#parameters",
-    "href": "reference/Lifemap.layer_lines.html#parameters",
-    "title": "Lifemap.layer_lines",
-    "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nwidth\nfloat | None\nBase line width, by default None\nNone\n\n\nwidth_col\nstr | None\nName of numeric DataFrame column to compute line width, by default None\nNone\n\n\ncolor_col\nstr | None\nName of numeric DataFrame column to determine line color, by default None\nNone\n\n\nscheme\nstr | None\nColor scheme for points color. If color_col is defined, it is the name of an Observable Plot color scale. Otherwise, it is an hexadecimal color value, by default None\nNone\n\n\nopacity\nfloat | None\nLine opacity as a floating number between 0 and 1, by default 0.8\n0.8\n\n\npopup\nbool | None\nTODO: doesn’t work for the moment. If True, display informations in a popup when a point is clicked, by default False\nFalse\n\n\nlabel\nstr | None\nLegend title for this layer if color_col is defined. If None, the value of color_col is used.\nNone",
-    "crumbs": [
-      "Reference",
-      "Visualization",
-      "Lifemap.layer_lines"
-    ]
-  },
-  {
-    "objectID": "reference/Lifemap.layer_lines.html#returns",
-    "href": "reference/Lifemap.layer_lines.html#returns",
-    "title": "Lifemap.layer_lines",
-    "section": "",
-    "text": "Type\nDescription\n\n\n\n\nLifemap\nA Lifemap visualization object.",
-    "crumbs": [
-      "Reference",
-      "Visualization",
-      "Lifemap.layer_lines"
-    ]
-  },
-  {
-    "objectID": "reference/Lifemap.layer_lines.html#examples",
-    "href": "reference/Lifemap.layer_lines.html#examples",
-    "title": "Lifemap.layer_lines",
-    "section": "",
-    "text": "&gt;&gt;&gt; import polars as pl\n&gt;&gt;&gt; from pylifemap import Lifemap, aggregate_num\n&gt;&gt;&gt; d = pl.DataFrame({\n...     \"taxid\": [9685, 9615, 9994, 2467430, 2514524, 2038938, 1021470, 1415565, 1928562, 1397240, 230741],\n...     \"value\": [ 7.4,  2.5,  8.3,     1.0,     1.4,     5.6,     4.6,     3.4,     2.3,     2.8,    3.1]\n... })\n&gt;&gt;&gt; d = aggregate_num(d, column=\"value\", fn=\"mean\")\n&gt;&gt;&gt; (\n...     Lifemap(d)\n...     .layer_lines(width_col=\"value\", color_col=\"value\")\n...     .show()\n... )",
-    "crumbs": [
-      "Reference",
-      "Visualization",
-      "Lifemap.layer_lines"
-    ]
-  },
-  {
-    "objectID": "reference/Lifemap.layer_lines.html#see-also",
-    "href": "reference/Lifemap.layer_lines.html#see-also",
-    "title": "Lifemap.layer_lines",
-    "section": "",
-    "text": "aggregate_num : aggregation of a numeric variable.\naggregate_count : aggregation of the number of observations.",
-    "crumbs": [
-      "Reference",
-      "Visualization",
-      "Lifemap.layer_lines"
-    ]
-  },
-  {
-    "objectID": "reference/Lifemap.layer_heatmap.html",
-    "href": "reference/Lifemap.layer_heatmap.html",
-    "title": "Lifemap.layer_heatmap",
-    "section": "",
-    "text": "Lifemap.layer_heatmap(radius=30, intensity=5, threshold=0.05, opacity=0.5, color_range=None)\nAdd a heatmap layer.\nThis layer is used to display observations distribution.\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nradius\nfloat\nHeatmap radius, by default 30\n30\n\n\nintensity\nfloat\nHeatmap intensity, by default 5\n5\n\n\nthreshold\nfloat\nHeatmap threshold, by default 0.05\n0.05\n\n\nopacity\nfloat\nHeatmap opacity as a floating number between 0 and 1, by default 0.5\n0.5\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nLifemap\nA Lifemap visualization object.\n\n\n\n\n\n\n&gt;&gt;&gt; import polars as pl\n&gt;&gt;&gt; from pylifemap import Lifemap\n&gt;&gt;&gt; d = pl.DataFrame({\n...     \"taxid\": [9685, 9615, 9994, 2467430, 2514524, 2038938, 1021470, 1415565, 1928562, 1397240, 230741],\n... })\n&gt;&gt;&gt; (\n...     Lifemap(d)\n...     .layer_heatmap()\n...     .show()\n... )",
-    "crumbs": [
-      "Reference",
-      "Visualization",
-      "Lifemap.layer_heatmap"
-    ]
-  },
-  {
-    "objectID": "reference/Lifemap.layer_heatmap.html#parameters",
-    "href": "reference/Lifemap.layer_heatmap.html#parameters",
-    "title": "Lifemap.layer_heatmap",
-    "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nradius\nfloat\nHeatmap radius, by default 30\n30\n\n\nintensity\nfloat\nHeatmap intensity, by default 5\n5\n\n\nthreshold\nfloat\nHeatmap threshold, by default 0.05\n0.05\n\n\nopacity\nfloat\nHeatmap opacity as a floating number between 0 and 1, by default 0.5\n0.5",
-    "crumbs": [
-      "Reference",
-      "Visualization",
-      "Lifemap.layer_heatmap"
-    ]
-  },
-  {
-    "objectID": "reference/Lifemap.layer_heatmap.html#returns",
-    "href": "reference/Lifemap.layer_heatmap.html#returns",
-    "title": "Lifemap.layer_heatmap",
-    "section": "",
-    "text": "Type\nDescription\n\n\n\n\nLifemap\nA Lifemap visualization object.",
-    "crumbs": [
-      "Reference",
-      "Visualization",
-      "Lifemap.layer_heatmap"
-    ]
-  },
-  {
-    "objectID": "reference/Lifemap.layer_heatmap.html#examples",
-    "href": "reference/Lifemap.layer_heatmap.html#examples",
-    "title": "Lifemap.layer_heatmap",
-    "section": "",
-    "text": "&gt;&gt;&gt; import polars as pl\n&gt;&gt;&gt; from pylifemap import Lifemap\n&gt;&gt;&gt; d = pl.DataFrame({\n...     \"taxid\": [9685, 9615, 9994, 2467430, 2514524, 2038938, 1021470, 1415565, 1928562, 1397240, 230741],\n... })\n&gt;&gt;&gt; (\n...     Lifemap(d)\n...     .layer_heatmap()\n...     .show()\n... )",
-    "crumbs": [
-      "Reference",
-      "Visualization",
-      "Lifemap.layer_heatmap"
     ]
   },
   {
@@ -240,199 +524,75 @@
     ]
   },
   {
-    "objectID": "reference/Lifemap.show.html",
-    "href": "reference/Lifemap.show.html",
-    "title": "Lifemap.show",
+    "objectID": "reference/Lifemap.layer_donuts.html",
+    "href": "reference/Lifemap.layer_donuts.html",
+    "title": "Lifemap.layer_donuts",
     "section": "",
-    "text": "Lifemap.show\nLifemap.show()\nDisplay the Jupyter widget for this instance.\nIf we are in a notebook environment, use display. Otherwise, export widget to an HTML file and open it in a browser if possible.",
+    "text": "Lifemap.layer_donuts(counts_col, *, radius=None, leaves='hide', scheme=None, opacity=1, popup=True, label=None)\nAdd a donuts layer.\nThis layer displays the distribution of a categorical variable values among each nodes children. Optionally it can also represent leaves values as a point layer.\nIt should be applied to data computed with aggregate_freq.\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ncounts_col\nstr\nDataFrame column containing the counts.\nrequired\n\n\nradius\nfloat | None\nDonut charts radius, by default None\nNone\n\n\nleaves\nLiteral[\"show\", \"hide\"]\nIf \"show\", add a points layer with individual leaves values, by default “hide”\n'hide'\n\n\nscheme\nstr | None\nColor scheme for donut charts ans points. It is the name of a categorical Observable Plot color scale, by default None\nNone\n\n\nopacity\nfloat | None\nDonut charts and points opacity, by default 1\n1\n\n\npopup\nbool | None\nIf True, display informations in a popup when a point is clicked, by default False, by default True\nTrue\n\n\nlabel\nstr | None\nLegend title for this layer. If None, the value of counts_col is used.\nNone\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nLifemap\nA Lifemap visualization object.\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nValueError\nIf leaves is not one of the allowed values.\n\n\n\n\n\n\n&gt;&gt;&gt; import polars as pl\n&gt;&gt;&gt; from pylifemap import Lifemap, aggregate_freq\n&gt;&gt;&gt; d = pl.DataFrame({\n...     \"taxid\": [9685, 9615, 9994, 2467430, 2514524, 2038938, 1021470, 1415565, 1928562, 1397240, 230741],\n...     \"category\": [\"a\", \"b\", \"b\", \"a\", \"a\", \"c\", \"a\", \"b\", \"b\", \"a\", \"b\"]\n... })\n&gt;&gt;&gt; d = aggregate_freq(d, column=\"category\")\n&gt;&gt;&gt; (\n...     Lifemap(d)\n...     .layer_donuts(counts_col=\"category\", leaves=\"hide\")\n...     .show()\n... )\n\n\n\n : aggregation of the values counts of a categorical variable.",
     "crumbs": [
       "Reference",
       "Visualization",
-      "Lifemap.show"
+      "Lifemap.layer_donuts"
     ]
   },
   {
-    "objectID": "reference/index.html",
-    "href": "reference/index.html",
-    "title": "Reference",
+    "objectID": "reference/Lifemap.layer_donuts.html#parameters",
+    "href": "reference/Lifemap.layer_donuts.html#parameters",
+    "title": "Lifemap.layer_donuts",
     "section": "",
-    "text": "Lifemap\nBuild visualization.\n\n\nLifemap.layer_points\nAdd a points layer.\n\n\nLifemap.layer_lines\nAdd a lines layer.\n\n\nLifemap.layer_donuts\nAdd a donuts layer.\n\n\nLifemap.layer_heatmap\nAdd a heatmap layer.\n\n\nLifemap.layer_screengrid\nAdd a screengrid layer.\n\n\nLifemap.show\nDisplay the Jupyter widget for this instance.\n\n\nLifemap.save\nSave the Jupyter widget for this instance to an HTML file.\n\n\n\n\n\n\nFunctions to aggregate data along the branches of the lifemap tree.\n\n\n\naggregate_count\nNodes count aggregation along branches.\n\n\naggregate_num\nNumerical variable aggregation along branches.\n\n\naggregate_freq\nCategorical variable frequencies aggregation along branches.",
-    "crumbs": [
-      "Reference"
-    ]
-  },
-  {
-    "objectID": "reference/index.html#visualization",
-    "href": "reference/index.html#visualization",
-    "title": "Reference",
-    "section": "",
-    "text": "Lifemap\nBuild visualization.\n\n\nLifemap.layer_points\nAdd a points layer.\n\n\nLifemap.layer_lines\nAdd a lines layer.\n\n\nLifemap.layer_donuts\nAdd a donuts layer.\n\n\nLifemap.layer_heatmap\nAdd a heatmap layer.\n\n\nLifemap.layer_screengrid\nAdd a screengrid layer.\n\n\nLifemap.show\nDisplay the Jupyter widget for this instance.\n\n\nLifemap.save\nSave the Jupyter widget for this instance to an HTML file.",
-    "crumbs": [
-      "Reference"
-    ]
-  },
-  {
-    "objectID": "reference/index.html#data-aggregation",
-    "href": "reference/index.html#data-aggregation",
-    "title": "Reference",
-    "section": "",
-    "text": "Functions to aggregate data along the branches of the lifemap tree.\n\n\n\naggregate_count\nNodes count aggregation along branches.\n\n\naggregate_num\nNumerical variable aggregation along branches.\n\n\naggregate_freq\nCategorical variable frequencies aggregation along branches.",
-    "crumbs": [
-      "Reference"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "pylifemap",
-    "section": "",
-    "text": "pylifemap is a jupyter widget allowing to visualize taxonomy data on Lifemap."
-  },
-  {
-    "objectID": "index.html#overview",
-    "href": "index.html#overview",
-    "title": "pylifemap",
-    "section": "",
-    "text": "pylifemap is a jupyter widget allowing to visualize taxonomy data on Lifemap."
-  },
-  {
-    "objectID": "index.html#installation-and-usage",
-    "href": "index.html#installation-and-usage",
-    "title": "pylifemap",
-    "section": "Installation and usage",
-    "text": "Installation and usage\nFor the moment the package can only be installed from Github:\npip install git+https://github.com/juba/pylifemap.git\nUsage gives more detailed usage instructions."
-  },
-  {
-    "objectID": "index.html#credits",
-    "href": "index.html#credits",
-    "title": "pylifemap",
-    "section": "Credits",
-    "text": "Credits\n\nThe iucn data files in the data/ directory have been generated from The IUCN Red List of Threatened Species dataset (DOI 10.15468/0qnb58).\nVisualizations are powered by Open Layers and deck.gl.\nThe widget is developed thanks to the anywidget framework.\nThis documentation website is generated by Quarto and quartodoc."
-  },
-  {
-    "objectID": "development.html",
-    "href": "development.html",
-    "title": "Development notes",
-    "section": "",
-    "text": "To install pylifemap from git:\npip install git+https://github.com/juba/pylifemap.git"
-  },
-  {
-    "objectID": "development.html#install-from-git",
-    "href": "development.html#install-from-git",
-    "title": "Development notes",
-    "section": "",
-    "text": "To install pylifemap from git:\npip install git+https://github.com/juba/pylifemap.git"
-  },
-  {
-    "objectID": "development.html#install-fom-source",
-    "href": "development.html#install-fom-source",
-    "title": "Development notes",
-    "section": "Install fom source",
-    "text": "Install fom source\nIf you want to build pylifemap from source, you’ll have to follow these steps:\n\nInstall node.js\nInstall hatch dependency management system\nClone the pylifemap repository\nInstall Python dependencies with : hatch shell\nInstall JavaScript dependencies with : npm install --workspaces --include-root-workspace"
-  },
-  {
-    "objectID": "development.html#widget-javascript-modification-and-bundling",
-    "href": "development.html#widget-javascript-modification-and-bundling",
-    "title": "Development notes",
-    "section": "Widget JavaScript modification and bundling",
-    "text": "Widget JavaScript modification and bundling\nEach time the widget JavaScript or CSS code is modified in the src/js/ or packages/lifemapjs directories, it must be bundled with one of the following commands in pylifemap:\n# Bundle only once\nnpm run bundle\n# Or, to bundle and watch for code change\nnpm run dev\nThe result is put into src/pylifemap/static."
-  },
-  {
-    "objectID": "development.html#maintenance-notes",
-    "href": "development.html#maintenance-notes",
-    "title": "Development notes",
-    "section": "Maintenance notes",
-    "text": "Maintenance notes\n\nReleases\n\nChange version in NEWS.md and src/pylifemap/__about__.py\nRelease the Python package with hatch build and hatch publish in pylifemap\nTag the version in git\nCreate a release on Github\nBump to dev version in pyproject.toml and NEWS.md"
-  },
-  {
-    "objectID": "usage.html",
-    "href": "usage.html",
-    "title": "Usage",
-    "section": "",
-    "text": "Usage instructions."
-  },
-  {
-    "objectID": "reference/Lifemap.save.html",
-    "href": "reference/Lifemap.save.html",
-    "title": "Lifemap.save",
-    "section": "",
-    "text": "Lifemap.save(path, title='Lifemap')\nSave the Jupyter widget for this instance to an HTML file.\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\npath\nstr | Path\nPath to the HTML file to save the widget.\nrequired\n\n\ntitle\nstr\nOptional HTML page title, by default “Lifemap”\n'Lifemap'\n\n\n\n\n\n\n&gt;&gt;&gt; import polars as pl\n&gt;&gt;&gt; from pylifemap import Lifemap\n&gt;&gt;&gt; d = pl.DataFrame({\"taxid\": [9685, 9615, 9994]})\n&gt;&gt;&gt; (\n...     Lifemap(d, width=\"100%\", height=\"100vh\")\n...     .layer_points()\n...     .save(\"lifemap.html\", title=\"Example lifemap\")\n... )",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ncounts_col\nstr\nDataFrame column containing the counts.\nrequired\n\n\nradius\nfloat | None\nDonut charts radius, by default None\nNone\n\n\nleaves\nLiteral[\"show\", \"hide\"]\nIf \"show\", add a points layer with individual leaves values, by default “hide”\n'hide'\n\n\nscheme\nstr | None\nColor scheme for donut charts ans points. It is the name of a categorical Observable Plot color scale, by default None\nNone\n\n\nopacity\nfloat | None\nDonut charts and points opacity, by default 1\n1\n\n\npopup\nbool | None\nIf True, display informations in a popup when a point is clicked, by default False, by default True\nTrue\n\n\nlabel\nstr | None\nLegend title for this layer. If None, the value of counts_col is used.\nNone",
     "crumbs": [
       "Reference",
       "Visualization",
-      "Lifemap.save"
+      "Lifemap.layer_donuts"
     ]
   },
   {
-    "objectID": "reference/Lifemap.save.html#parameters",
-    "href": "reference/Lifemap.save.html#parameters",
-    "title": "Lifemap.save",
-    "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\npath\nstr | Path\nPath to the HTML file to save the widget.\nrequired\n\n\ntitle\nstr\nOptional HTML page title, by default “Lifemap”\n'Lifemap'",
-    "crumbs": [
-      "Reference",
-      "Visualization",
-      "Lifemap.save"
-    ]
-  },
-  {
-    "objectID": "reference/Lifemap.save.html#examples",
-    "href": "reference/Lifemap.save.html#examples",
-    "title": "Lifemap.save",
-    "section": "",
-    "text": "&gt;&gt;&gt; import polars as pl\n&gt;&gt;&gt; from pylifemap import Lifemap\n&gt;&gt;&gt; d = pl.DataFrame({\"taxid\": [9685, 9615, 9994]})\n&gt;&gt;&gt; (\n...     Lifemap(d, width=\"100%\", height=\"100vh\")\n...     .layer_points()\n...     .save(\"lifemap.html\", title=\"Example lifemap\")\n... )",
-    "crumbs": [
-      "Reference",
-      "Visualization",
-      "Lifemap.save"
-    ]
-  },
-  {
-    "objectID": "reference/Lifemap.layer_screengrid.html",
-    "href": "reference/Lifemap.layer_screengrid.html",
-    "title": "Lifemap.layer_screengrid",
-    "section": "",
-    "text": "Lifemap.layer_screengrid(cell_size=30, extruded=False, opacity=0.5)\nAdd a screengrid layer.\nThis layer is used to display observations distribution. It should be noted that the visualization is highly sensitive to the zoom level and the map extent.\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ncell_size\nint\nScreen grid cell size, in pixels, by default 30\n30\n\n\nextruded\n(bool, optionals)\nIf True, show the grid as extruded, by default False\nFalse\n\n\nopacity\nfloat\nScreengrid opacity as a floating point number between 0 and 1, by default 0.5\n0.5\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nLifemap\nA Lifemap visualization object.\n\n\n\n\n\n\n&gt;&gt;&gt; import polars as pl\n&gt;&gt;&gt; from pylifemap import Lifemap\n&gt;&gt;&gt; d = pl.DataFrame({\n...     \"taxid\": [9685, 9615, 9994, 2467430, 2514524, 2038938, 1021470, 1415565, 1928562, 1397240, 230741],\n... })\n&gt;&gt;&gt; (\n...     Lifemap(d)\n...     .layer_screengrid()\n...     .show()\n... )",
-    "crumbs": [
-      "Reference",
-      "Visualization",
-      "Lifemap.layer_screengrid"
-    ]
-  },
-  {
-    "objectID": "reference/Lifemap.layer_screengrid.html#parameters",
-    "href": "reference/Lifemap.layer_screengrid.html#parameters",
-    "title": "Lifemap.layer_screengrid",
-    "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ncell_size\nint\nScreen grid cell size, in pixels, by default 30\n30\n\n\nextruded\n(bool, optionals)\nIf True, show the grid as extruded, by default False\nFalse\n\n\nopacity\nfloat\nScreengrid opacity as a floating point number between 0 and 1, by default 0.5\n0.5",
-    "crumbs": [
-      "Reference",
-      "Visualization",
-      "Lifemap.layer_screengrid"
-    ]
-  },
-  {
-    "objectID": "reference/Lifemap.layer_screengrid.html#returns",
-    "href": "reference/Lifemap.layer_screengrid.html#returns",
-    "title": "Lifemap.layer_screengrid",
+    "objectID": "reference/Lifemap.layer_donuts.html#returns",
+    "href": "reference/Lifemap.layer_donuts.html#returns",
+    "title": "Lifemap.layer_donuts",
     "section": "",
     "text": "Type\nDescription\n\n\n\n\nLifemap\nA Lifemap visualization object.",
     "crumbs": [
       "Reference",
       "Visualization",
-      "Lifemap.layer_screengrid"
+      "Lifemap.layer_donuts"
     ]
   },
   {
-    "objectID": "reference/Lifemap.layer_screengrid.html#examples",
-    "href": "reference/Lifemap.layer_screengrid.html#examples",
-    "title": "Lifemap.layer_screengrid",
+    "objectID": "reference/Lifemap.layer_donuts.html#raises",
+    "href": "reference/Lifemap.layer_donuts.html#raises",
+    "title": "Lifemap.layer_donuts",
     "section": "",
-    "text": "&gt;&gt;&gt; import polars as pl\n&gt;&gt;&gt; from pylifemap import Lifemap\n&gt;&gt;&gt; d = pl.DataFrame({\n...     \"taxid\": [9685, 9615, 9994, 2467430, 2514524, 2038938, 1021470, 1415565, 1928562, 1397240, 230741],\n... })\n&gt;&gt;&gt; (\n...     Lifemap(d)\n...     .layer_screengrid()\n...     .show()\n... )",
+    "text": "Type\nDescription\n\n\n\n\nValueError\nIf leaves is not one of the allowed values.",
     "crumbs": [
       "Reference",
       "Visualization",
-      "Lifemap.layer_screengrid"
+      "Lifemap.layer_donuts"
+    ]
+  },
+  {
+    "objectID": "reference/Lifemap.layer_donuts.html#examples",
+    "href": "reference/Lifemap.layer_donuts.html#examples",
+    "title": "Lifemap.layer_donuts",
+    "section": "",
+    "text": "&gt;&gt;&gt; import polars as pl\n&gt;&gt;&gt; from pylifemap import Lifemap, aggregate_freq\n&gt;&gt;&gt; d = pl.DataFrame({\n...     \"taxid\": [9685, 9615, 9994, 2467430, 2514524, 2038938, 1021470, 1415565, 1928562, 1397240, 230741],\n...     \"category\": [\"a\", \"b\", \"b\", \"a\", \"a\", \"c\", \"a\", \"b\", \"b\", \"a\", \"b\"]\n... })\n&gt;&gt;&gt; d = aggregate_freq(d, column=\"category\")\n&gt;&gt;&gt; (\n...     Lifemap(d)\n...     .layer_donuts(counts_col=\"category\", leaves=\"hide\")\n...     .show()\n... )",
+    "crumbs": [
+      "Reference",
+      "Visualization",
+      "Lifemap.layer_donuts"
+    ]
+  },
+  {
+    "objectID": "reference/Lifemap.layer_donuts.html#see-also",
+    "href": "reference/Lifemap.layer_donuts.html#see-also",
+    "title": "Lifemap.layer_donuts",
+    "section": "",
+    "text": ": aggregation of the values counts of a categorical variable.",
+    "crumbs": [
+      "Reference",
+      "Visualization",
+      "Lifemap.layer_donuts"
     ]
   },
   {
@@ -508,197 +668,93 @@
     ]
   },
   {
-    "objectID": "reference/aggregate_count.html",
-    "href": "reference/aggregate_count.html",
-    "title": "aggregate_count",
+    "objectID": "reference/index.html",
+    "href": "reference/index.html",
+    "title": "Reference",
     "section": "",
-    "text": "aggregate_count(d, *, result_col='n', taxid_col='taxid')\nNodes count aggregation along branches.\nAggregates nodes count in a DataFrame with taxonomy ids along the branches of the lifemap tree.\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nd\npd.DataFrame | pl.DataFrame\nDataFrame to aggregate data from.\nrequired\n\n\nresult_col\nstr\nName of the column created to store the counts, by default “n”.\n'n'\n\n\ntaxid_col\nstr\nName of the d column containing taxonomy ids, by default “taxid”.\n'taxid'\n\n\n\n\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\npl.DataFrame\nAggregated DataFrame.\n\n\n\n\n\n\naggregate_num : aggregation of a numeric variable.\naggregate_freq : aggregation of the values counts of a categorical variable.\n\n\n\n&gt;&gt;&gt; from pylifemap import aggregate_count\n&gt;&gt;&gt; import polars as pl\n&gt;&gt;&gt; d = pl.DataFrame({\"taxid\": [33154, 33090, 2]})\n&gt;&gt;&gt; aggregate_count(d)\nshape: (5, 2)\n┌───────┬─────┐\n│ taxid ┆ n   │\n│ ---   ┆ --- │\n│ i32   ┆ u32 │\n╞═══════╪═════╡\n│ 0     ┆ 3   │\n│ 2     ┆ 1   │\n│ 2759  ┆ 2   │\n│ 33090 ┆ 1   │\n│ 33154 ┆ 1   │\n└───────┴─────┘",
+    "text": "Lifemap\nBuild visualization.\n\n\nLifemap.layer_points\nAdd a points layer.\n\n\nLifemap.layer_lines\nAdd a lines layer.\n\n\nLifemap.layer_donuts\nAdd a donuts layer.\n\n\nLifemap.layer_heatmap\nAdd a heatmap layer.\n\n\nLifemap.layer_screengrid\nAdd a screengrid layer.\n\n\nLifemap.show\nDisplay the Jupyter widget for this instance.\n\n\nLifemap.save\nSave the Jupyter widget for this instance to an HTML file.\n\n\n\n\n\n\nFunctions to aggregate data along the branches of the lifemap tree.\n\n\n\naggregate_count\nNodes count aggregation along branches.\n\n\naggregate_num\nNumerical variable aggregation along branches.\n\n\naggregate_freq\nCategorical variable frequencies aggregation along branches.",
     "crumbs": [
-      "Reference",
-      "Data aggregation",
-      "aggregate_count"
+      "Reference"
     ]
   },
   {
-    "objectID": "reference/aggregate_count.html#parameters",
-    "href": "reference/aggregate_count.html#parameters",
-    "title": "aggregate_count",
+    "objectID": "reference/index.html#visualization",
+    "href": "reference/index.html#visualization",
+    "title": "Reference",
     "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nd\npd.DataFrame | pl.DataFrame\nDataFrame to aggregate data from.\nrequired\n\n\nresult_col\nstr\nName of the column created to store the counts, by default “n”.\n'n'\n\n\ntaxid_col\nstr\nName of the d column containing taxonomy ids, by default “taxid”.\n'taxid'",
+    "text": "Lifemap\nBuild visualization.\n\n\nLifemap.layer_points\nAdd a points layer.\n\n\nLifemap.layer_lines\nAdd a lines layer.\n\n\nLifemap.layer_donuts\nAdd a donuts layer.\n\n\nLifemap.layer_heatmap\nAdd a heatmap layer.\n\n\nLifemap.layer_screengrid\nAdd a screengrid layer.\n\n\nLifemap.show\nDisplay the Jupyter widget for this instance.\n\n\nLifemap.save\nSave the Jupyter widget for this instance to an HTML file.",
     "crumbs": [
-      "Reference",
-      "Data aggregation",
-      "aggregate_count"
+      "Reference"
     ]
   },
   {
-    "objectID": "reference/aggregate_count.html#returns",
-    "href": "reference/aggregate_count.html#returns",
-    "title": "aggregate_count",
+    "objectID": "reference/index.html#data-aggregation",
+    "href": "reference/index.html#data-aggregation",
+    "title": "Reference",
     "section": "",
-    "text": "Type\nDescription\n\n\n\n\npl.DataFrame\nAggregated DataFrame.",
+    "text": "Functions to aggregate data along the branches of the lifemap tree.\n\n\n\naggregate_count\nNodes count aggregation along branches.\n\n\naggregate_num\nNumerical variable aggregation along branches.\n\n\naggregate_freq\nCategorical variable frequencies aggregation along branches.",
     "crumbs": [
-      "Reference",
-      "Data aggregation",
-      "aggregate_count"
+      "Reference"
     ]
   },
   {
-    "objectID": "reference/aggregate_count.html#see-also",
-    "href": "reference/aggregate_count.html#see-also",
-    "title": "aggregate_count",
+    "objectID": "reference/Lifemap.layer_lines.html",
+    "href": "reference/Lifemap.layer_lines.html",
+    "title": "Lifemap.layer_lines",
     "section": "",
-    "text": "aggregate_num : aggregation of a numeric variable.\naggregate_freq : aggregation of the values counts of a categorical variable.",
-    "crumbs": [
-      "Reference",
-      "Data aggregation",
-      "aggregate_count"
-    ]
-  },
-  {
-    "objectID": "reference/aggregate_count.html#examples",
-    "href": "reference/aggregate_count.html#examples",
-    "title": "aggregate_count",
-    "section": "",
-    "text": "&gt;&gt;&gt; from pylifemap import aggregate_count\n&gt;&gt;&gt; import polars as pl\n&gt;&gt;&gt; d = pl.DataFrame({\"taxid\": [33154, 33090, 2]})\n&gt;&gt;&gt; aggregate_count(d)\nshape: (5, 2)\n┌───────┬─────┐\n│ taxid ┆ n   │\n│ ---   ┆ --- │\n│ i32   ┆ u32 │\n╞═══════╪═════╡\n│ 0     ┆ 3   │\n│ 2     ┆ 1   │\n│ 2759  ┆ 2   │\n│ 33090 ┆ 1   │\n│ 33154 ┆ 1   │\n└───────┴─────┘",
-    "crumbs": [
-      "Reference",
-      "Data aggregation",
-      "aggregate_count"
-    ]
-  },
-  {
-    "objectID": "reference/Lifemap.html",
-    "href": "reference/Lifemap.html",
-    "title": "Lifemap",
-    "section": "",
-    "text": "Lifemap(self, data, *, taxid_col='taxid', width=DEFAULT_WIDTH, height=DEFAULT_HEIGHT, zoom=5, legend_width=None)\nBuild visualization.\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ndata\npl.DataFrame | pd.DataFrame\nVisualization data.\nrequired\n\n\ntaxid_col\nstr\nName of the data column with taxonomy ids, by default \"taxid\"\n'taxid'\n\n\nwidth\nint | str\nLifemap visualization width, in pixels or CSS units, by default DEFAULT_WIDTH\nDEFAULT_WIDTH\n\n\nheight\nint | str\nLifemap visualization height, in pixels or CSS units, by default DEFAULT_HEIGHT\nDEFAULT_HEIGHT\n\n\nzoom\nint\nDefault Lifemap zoom level, by default 5\n5\n\n\nlegend_width\nint | None\nLegend width in pixels, by default None\nNone\n\n\n\n\n\n\n&gt;&gt;&gt; import polars as pl\n&gt;&gt;&gt; from pylifemap import Lifemap\n&gt;&gt;&gt; d = pl.DataFrame({\"taxid\": [9685, 9615, 9994]})\n&gt;&gt;&gt; (\n...     Lifemap(d, width=\"100%\", height=\"100vh\")\n...     .layer_points()\n...     .show()\n&gt;&gt;&gt; )\n\n\n\n\n\n\nName\nDescription\n\n\n\n\npylifemap.Lifemap.layer_points\nAdd a points layer.\n\n\npylifemap.Lifemap.layer_lines\nAdd a lines layer.\n\n\npylifemap.Lifemap.layer_donuts\nAdd a donuts layer.\n\n\npylifemap.Lifemap.layer_heatmap\nAdd a heatmap layer.\n\n\npylifemap.Lifemap.layer_screengrid\nAdd a screengrid layer.\n\n\npylifemap.Lifemap.show\nDisplay the Jupyter widget for this instance.\n\n\npylifemap.Lifemap.save\nSave the Jupyter widget for this instance to an HTML file.",
+    "text": "Lifemap.layer_lines(width=None, width_col=None, color_col=None, scheme=None, opacity=0.8, popup=False, label=None)\nAdd a lines layer.\nThis layer can be applied to data generated by aggregate_num or aggregate_count.\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nwidth\nfloat | None\nBase line width, by default None\nNone\n\n\nwidth_col\nstr | None\nName of numeric DataFrame column to compute line width, by default None\nNone\n\n\ncolor_col\nstr | None\nName of numeric DataFrame column to determine line color, by default None\nNone\n\n\nscheme\nstr | None\nColor scheme for points color. If color_col is defined, it is the name of an Observable Plot color scale. Otherwise, it is an hexadecimal color value, by default None\nNone\n\n\nopacity\nfloat | None\nLine opacity as a floating number between 0 and 1, by default 0.8\n0.8\n\n\npopup\nbool | None\nTODO: doesn’t work for the moment. If True, display informations in a popup when a point is clicked, by default False\nFalse\n\n\nlabel\nstr | None\nLegend title for this layer if color_col is defined. If None, the value of color_col is used.\nNone\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nLifemap\nA Lifemap visualization object.\n\n\n\n\n\n\n&gt;&gt;&gt; import polars as pl\n&gt;&gt;&gt; from pylifemap import Lifemap, aggregate_num\n&gt;&gt;&gt; d = pl.DataFrame({\n...     \"taxid\": [9685, 9615, 9994, 2467430, 2514524, 2038938, 1021470, 1415565, 1928562, 1397240, 230741],\n...     \"value\": [ 7.4,  2.5,  8.3,     1.0,     1.4,     5.6,     4.6,     3.4,     2.3,     2.8,    3.1]\n... })\n&gt;&gt;&gt; d = aggregate_num(d, column=\"value\", fn=\"mean\")\n&gt;&gt;&gt; (\n...     Lifemap(d)\n...     .layer_lines(width_col=\"value\", color_col=\"value\")\n...     .show()\n... )\n\n\n\naggregate_num : aggregation of a numeric variable.\naggregate_count : aggregation of the number of observations.",
     "crumbs": [
       "Reference",
       "Visualization",
-      "Lifemap"
+      "Lifemap.layer_lines"
     ]
   },
   {
-    "objectID": "reference/Lifemap.html#parameters",
-    "href": "reference/Lifemap.html#parameters",
-    "title": "Lifemap",
+    "objectID": "reference/Lifemap.layer_lines.html#parameters",
+    "href": "reference/Lifemap.layer_lines.html#parameters",
+    "title": "Lifemap.layer_lines",
     "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ndata\npl.DataFrame | pd.DataFrame\nVisualization data.\nrequired\n\n\ntaxid_col\nstr\nName of the data column with taxonomy ids, by default \"taxid\"\n'taxid'\n\n\nwidth\nint | str\nLifemap visualization width, in pixels or CSS units, by default DEFAULT_WIDTH\nDEFAULT_WIDTH\n\n\nheight\nint | str\nLifemap visualization height, in pixels or CSS units, by default DEFAULT_HEIGHT\nDEFAULT_HEIGHT\n\n\nzoom\nint\nDefault Lifemap zoom level, by default 5\n5\n\n\nlegend_width\nint | None\nLegend width in pixels, by default None\nNone",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nwidth\nfloat | None\nBase line width, by default None\nNone\n\n\nwidth_col\nstr | None\nName of numeric DataFrame column to compute line width, by default None\nNone\n\n\ncolor_col\nstr | None\nName of numeric DataFrame column to determine line color, by default None\nNone\n\n\nscheme\nstr | None\nColor scheme for points color. If color_col is defined, it is the name of an Observable Plot color scale. Otherwise, it is an hexadecimal color value, by default None\nNone\n\n\nopacity\nfloat | None\nLine opacity as a floating number between 0 and 1, by default 0.8\n0.8\n\n\npopup\nbool | None\nTODO: doesn’t work for the moment. If True, display informations in a popup when a point is clicked, by default False\nFalse\n\n\nlabel\nstr | None\nLegend title for this layer if color_col is defined. If None, the value of color_col is used.\nNone",
     "crumbs": [
       "Reference",
       "Visualization",
-      "Lifemap"
+      "Lifemap.layer_lines"
     ]
   },
   {
-    "objectID": "reference/Lifemap.html#examples",
-    "href": "reference/Lifemap.html#examples",
-    "title": "Lifemap",
-    "section": "",
-    "text": "&gt;&gt;&gt; import polars as pl\n&gt;&gt;&gt; from pylifemap import Lifemap\n&gt;&gt;&gt; d = pl.DataFrame({\"taxid\": [9685, 9615, 9994]})\n&gt;&gt;&gt; (\n...     Lifemap(d, width=\"100%\", height=\"100vh\")\n...     .layer_points()\n...     .show()\n&gt;&gt;&gt; )",
-    "crumbs": [
-      "Reference",
-      "Visualization",
-      "Lifemap"
-    ]
-  },
-  {
-    "objectID": "reference/Lifemap.html#methods",
-    "href": "reference/Lifemap.html#methods",
-    "title": "Lifemap",
-    "section": "",
-    "text": "Name\nDescription\n\n\n\n\npylifemap.Lifemap.layer_points\nAdd a points layer.\n\n\npylifemap.Lifemap.layer_lines\nAdd a lines layer.\n\n\npylifemap.Lifemap.layer_donuts\nAdd a donuts layer.\n\n\npylifemap.Lifemap.layer_heatmap\nAdd a heatmap layer.\n\n\npylifemap.Lifemap.layer_screengrid\nAdd a screengrid layer.\n\n\npylifemap.Lifemap.show\nDisplay the Jupyter widget for this instance.\n\n\npylifemap.Lifemap.save\nSave the Jupyter widget for this instance to an HTML file.",
-    "crumbs": [
-      "Reference",
-      "Visualization",
-      "Lifemap"
-    ]
-  },
-  {
-    "objectID": "reference/Lifemap.layer_donuts.html",
-    "href": "reference/Lifemap.layer_donuts.html",
-    "title": "Lifemap.layer_donuts",
-    "section": "",
-    "text": "Lifemap.layer_donuts(counts_col, *, radius=None, leaves='hide', scheme=None, opacity=1, popup=True, label=None)\nAdd a donuts layer.\nThis layer displays the distribution of a categorical variable values among each nodes’ children. Optionnaly it can also represent leaves values as a point layer.\nIt should be applied to data computed with aggregate_freq.\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ncounts_col\nstr\nDataFrame column containing the counts.\nrequired\n\n\nradius\nfloat | None\nDonut charts radius, by default None\nNone\n\n\nleaves\nLiteral[\"show\", \"hide\"]\nIf \"show\", add a points layer with individual leaves values, by default “hide”\n'hide'\n\n\nscheme\nstr | None\nColor scheme for donut charts ans points. It is the name of a categorical Observable Plot color scale, by default None\nNone\n\n\nopacity\nfloat | None\nDonut charts and points opacity, by default 1\n1\n\n\npopup\nbool | None\nIf True, display informations in a popup when a point is clicked, by default False, by default True\nTrue\n\n\nlabel\nstr | None\nLegend title for this layer. If None, the value of counts_col is used.\nNone\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nLifemap\nA Lifemap visualization object.\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nValueError\nIf leaves is not one of the allowed values.\n\n\n\n\n\n\n&gt;&gt;&gt; import polars as pl\n&gt;&gt;&gt; from pylifemap import Lifemap, aggregate_freq\n&gt;&gt;&gt; d = pl.DataFrame({\n...     \"taxid\": [9685, 9615, 9994, 2467430, 2514524, 2038938, 1021470, 1415565, 1928562, 1397240, 230741],\n...     \"category\": [\"a\", \"b\", \"b\", \"a\", \"a\", \"c\", \"a\", \"b\", \"b\", \"a\", \"b\"]\n... })\n&gt;&gt;&gt; d = aggregate_freq(d, column=\"category\")\n&gt;&gt;&gt; (\n...     Lifemap(d)\n...     .layer_donuts(counts_col=\"category\", leaves=\"hide\")\n...     .show()\n... )\n\n\n\naggregate_freq : aggregation of the values counts of a categorical variable.",
-    "crumbs": [
-      "Reference",
-      "Visualization",
-      "Lifemap.layer_donuts"
-    ]
-  },
-  {
-    "objectID": "reference/Lifemap.layer_donuts.html#parameters",
-    "href": "reference/Lifemap.layer_donuts.html#parameters",
-    "title": "Lifemap.layer_donuts",
-    "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ncounts_col\nstr\nDataFrame column containing the counts.\nrequired\n\n\nradius\nfloat | None\nDonut charts radius, by default None\nNone\n\n\nleaves\nLiteral[\"show\", \"hide\"]\nIf \"show\", add a points layer with individual leaves values, by default “hide”\n'hide'\n\n\nscheme\nstr | None\nColor scheme for donut charts ans points. It is the name of a categorical Observable Plot color scale, by default None\nNone\n\n\nopacity\nfloat | None\nDonut charts and points opacity, by default 1\n1\n\n\npopup\nbool | None\nIf True, display informations in a popup when a point is clicked, by default False, by default True\nTrue\n\n\nlabel\nstr | None\nLegend title for this layer. If None, the value of counts_col is used.\nNone",
-    "crumbs": [
-      "Reference",
-      "Visualization",
-      "Lifemap.layer_donuts"
-    ]
-  },
-  {
-    "objectID": "reference/Lifemap.layer_donuts.html#returns",
-    "href": "reference/Lifemap.layer_donuts.html#returns",
-    "title": "Lifemap.layer_donuts",
+    "objectID": "reference/Lifemap.layer_lines.html#returns",
+    "href": "reference/Lifemap.layer_lines.html#returns",
+    "title": "Lifemap.layer_lines",
     "section": "",
     "text": "Type\nDescription\n\n\n\n\nLifemap\nA Lifemap visualization object.",
     "crumbs": [
       "Reference",
       "Visualization",
-      "Lifemap.layer_donuts"
+      "Lifemap.layer_lines"
     ]
   },
   {
-    "objectID": "reference/Lifemap.layer_donuts.html#raises",
-    "href": "reference/Lifemap.layer_donuts.html#raises",
-    "title": "Lifemap.layer_donuts",
+    "objectID": "reference/Lifemap.layer_lines.html#examples",
+    "href": "reference/Lifemap.layer_lines.html#examples",
+    "title": "Lifemap.layer_lines",
     "section": "",
-    "text": "Type\nDescription\n\n\n\n\nValueError\nIf leaves is not one of the allowed values.",
+    "text": "&gt;&gt;&gt; import polars as pl\n&gt;&gt;&gt; from pylifemap import Lifemap, aggregate_num\n&gt;&gt;&gt; d = pl.DataFrame({\n...     \"taxid\": [9685, 9615, 9994, 2467430, 2514524, 2038938, 1021470, 1415565, 1928562, 1397240, 230741],\n...     \"value\": [ 7.4,  2.5,  8.3,     1.0,     1.4,     5.6,     4.6,     3.4,     2.3,     2.8,    3.1]\n... })\n&gt;&gt;&gt; d = aggregate_num(d, column=\"value\", fn=\"mean\")\n&gt;&gt;&gt; (\n...     Lifemap(d)\n...     .layer_lines(width_col=\"value\", color_col=\"value\")\n...     .show()\n... )",
     "crumbs": [
       "Reference",
       "Visualization",
-      "Lifemap.layer_donuts"
+      "Lifemap.layer_lines"
     ]
   },
   {
-    "objectID": "reference/Lifemap.layer_donuts.html#examples",
-    "href": "reference/Lifemap.layer_donuts.html#examples",
-    "title": "Lifemap.layer_donuts",
+    "objectID": "reference/Lifemap.layer_lines.html#see-also",
+    "href": "reference/Lifemap.layer_lines.html#see-also",
+    "title": "Lifemap.layer_lines",
     "section": "",
-    "text": "&gt;&gt;&gt; import polars as pl\n&gt;&gt;&gt; from pylifemap import Lifemap, aggregate_freq\n&gt;&gt;&gt; d = pl.DataFrame({\n...     \"taxid\": [9685, 9615, 9994, 2467430, 2514524, 2038938, 1021470, 1415565, 1928562, 1397240, 230741],\n...     \"category\": [\"a\", \"b\", \"b\", \"a\", \"a\", \"c\", \"a\", \"b\", \"b\", \"a\", \"b\"]\n... })\n&gt;&gt;&gt; d = aggregate_freq(d, column=\"category\")\n&gt;&gt;&gt; (\n...     Lifemap(d)\n...     .layer_donuts(counts_col=\"category\", leaves=\"hide\")\n...     .show()\n... )",
+    "text": "aggregate_num : aggregation of a numeric variable.\naggregate_count : aggregation of the number of observations.",
     "crumbs": [
       "Reference",
       "Visualization",
-      "Lifemap.layer_donuts"
+      "Lifemap.layer_lines"
     ]
-  },
-  {
-    "objectID": "reference/Lifemap.layer_donuts.html#see-also",
-    "href": "reference/Lifemap.layer_donuts.html#see-also",
-    "title": "Lifemap.layer_donuts",
-    "section": "",
-    "text": "aggregate_freq : aggregation of the values counts of a categorical variable.",
-    "crumbs": [
-      "Reference",
-      "Visualization",
-      "Lifemap.layer_donuts"
-    ]
-  },
-  {
-    "objectID": "changelog.html",
-    "href": "changelog.html",
-    "title": "Changelog",
-    "section": "",
-    "text": "Development version, work in progress"
-  },
-  {
-    "objectID": "changelog.html#pylifemap-0.0.1-dev",
-    "href": "changelog.html#pylifemap-0.0.1-dev",
-    "title": "Changelog",
-    "section": "",
-    "text": "Development version, work in progress"
   }
 ]

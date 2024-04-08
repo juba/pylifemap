@@ -131,7 +131,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-layers">    
         <li>
-    <a class="dropdown-item" href="./layer_points.html">
+    <a class="dropdown-item" href="./layers/layer_points.html">
  <span class="dropdown-text">Points layer</span></a>
   </li>  
     </ul>
@@ -175,6 +175,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#install-from-git" id="toc-install-from-git" class="nav-link active" data-scroll-target="#install-from-git">Install from git</a></li>
   <li><a href="#install-fom-source" id="toc-install-fom-source" class="nav-link" data-scroll-target="#install-fom-source">Install fom source</a></li>
   <li><a href="#widget-javascript-modification-and-bundling" id="toc-widget-javascript-modification-and-bundling" class="nav-link" data-scroll-target="#widget-javascript-modification-and-bundling">Widget JavaScript modification and bundling</a></li>
+  <li><a href="#tests" id="toc-tests" class="nav-link" data-scroll-target="#tests">Tests</a></li>
+  <li><a href="#documentation" id="toc-documentation" class="nav-link" data-scroll-target="#documentation">Documentation</a></li>
   <li><a href="#maintenance-notes" id="toc-maintenance-notes" class="nav-link" data-scroll-target="#maintenance-notes">Maintenance notes</a>
   <ul class="collapse">
   <li><a href="#releases" id="toc-releases" class="nav-link" data-scroll-target="#releases">Releases</a></li>
@@ -222,12 +224,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="widget-javascript-modification-and-bundling" class="level2">
 <h2 class="anchored" data-anchor-id="widget-javascript-modification-and-bundling">Widget JavaScript modification and bundling</h2>
-<p>Each time the widget JavaScript or CSS code is modified in the <code>src/js/</code> or <code>packages/lifemapjs</code> directories, it must be bundled with one of the following commands in <code>pylifemap</code>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bundle only once</span></span>
+<p>Each time the widget JavaScript or CSS code is modified in the <code>src/js/</code> or <code>packages/lifemapjs/</code> directories, it must be bundled with one of the following commands in <code>pylifemap</code>:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bundle</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run bundle</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Or, to bundle and watch for code change</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run dev</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Build (bundle + minify)</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run build</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Bundle and watch for code change</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run dev</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The result is put into <code>src/pylifemap/static</code>.</p>
+</section>
+<section id="tests" class="level2">
+<h2 class="anchored" data-anchor-id="tests">Tests</h2>
+<p>Python tests are in the <code>tests</code> directory and can be run with:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">hatch</span> run test</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="documentation" class="level2">
+<h2 class="anchored" data-anchor-id="documentation">Documentation</h2>
+<p>The package documentation is in <code>doc/</code>. It is managed by <a href="https://quarto.org">quarto</a> and <a href="https://machow.github.io/quartodoc/">quartodoc</a>.</p>
+<p>To build it in HTML format in <code>doc/_site/</code>you can run:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">hatch</span> run doc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="maintenance-notes" class="level2">
 <h2 class="anchored" data-anchor-id="maintenance-notes">Maintenance notes</h2>
