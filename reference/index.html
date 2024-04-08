@@ -154,7 +154,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Lifemap class</span></a>
+ <span class="menu-text">Visualization</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -166,12 +166,54 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Lifemap</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reference/Lifemap.layer_points.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lifemap.layer_points</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reference/Lifemap.layer_lines.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lifemap.layer_lines</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reference/Lifemap.layer_donuts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lifemap.layer_donuts</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reference/Lifemap.layer_heatmap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lifemap.layer_heatmap</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reference/Lifemap.layer_screengrid.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lifemap.layer_screengrid</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reference/Lifemap.show.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lifemap.show</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reference/Lifemap.save.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lifemap.save</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">Aggregation functions</span></a>
+ <span class="menu-text">Data aggregation</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -209,8 +251,8 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#reference" id="toc-reference" class="nav-link active" data-scroll-target="#reference">Reference</a>
   <ul class="collapse">
-  <li><a href="#lifemap-class" id="toc-lifemap-class" class="nav-link" data-scroll-target="#lifemap-class">Lifemap class</a></li>
-  <li><a href="#aggregation-functions" id="toc-aggregation-functions" class="nav-link" data-scroll-target="#aggregation-functions">Aggregation functions</a></li>
+  <li><a href="#visualization" id="toc-visualization" class="nav-link" data-scroll-target="#visualization">Visualization</a></li>
+  <li><a href="#data-aggregation" id="toc-data-aggregation" class="nav-link" data-scroll-target="#data-aggregation">Data aggregation</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/juba/pylifemap/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
@@ -223,20 +265,47 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="reference" class="level1 doc doc-index">
 <h1 class="doc doc-index">Reference</h1>
-<section id="lifemap-class" class="level2">
-<h2 class="anchored" data-anchor-id="lifemap-class">Lifemap class</h2>
-<p>Main Lifemap class.</p>
+<section id="visualization" class="level2">
+<h2 class="anchored" data-anchor-id="visualization">Visualization</h2>
 <table class="table">
 <tbody>
 <tr class="odd">
 <td><a href="../reference/Lifemap.html#pylifemap.Lifemap">Lifemap</a></td>
 <td>Build visualization.</td>
 </tr>
+<tr class="even">
+<td><a href="../reference/Lifemap.layer_points.html#pylifemap.Lifemap.layer_points">Lifemap.layer_points</a></td>
+<td>Add a points layer.</td>
+</tr>
+<tr class="odd">
+<td><a href="../reference/Lifemap.layer_lines.html#pylifemap.Lifemap.layer_lines">Lifemap.layer_lines</a></td>
+<td>Add a lines layer.</td>
+</tr>
+<tr class="even">
+<td><a href="../reference/Lifemap.layer_donuts.html#pylifemap.Lifemap.layer_donuts">Lifemap.layer_donuts</a></td>
+<td>Add a donuts layer.</td>
+</tr>
+<tr class="odd">
+<td><a href="../reference/Lifemap.layer_heatmap.html#pylifemap.Lifemap.layer_heatmap">Lifemap.layer_heatmap</a></td>
+<td>Add a heatmap layer.</td>
+</tr>
+<tr class="even">
+<td><a href="../reference/Lifemap.layer_screengrid.html#pylifemap.Lifemap.layer_screengrid">Lifemap.layer_screengrid</a></td>
+<td>Add a screengrid layer.</td>
+</tr>
+<tr class="odd">
+<td><a href="../reference/Lifemap.show.html#pylifemap.Lifemap.show">Lifemap.show</a></td>
+<td>Display the Jupyter widget for this instance.</td>
+</tr>
+<tr class="even">
+<td><a href="../reference/Lifemap.save.html#pylifemap.Lifemap.save">Lifemap.save</a></td>
+<td>Save the Jupyter widget for this instance to an HTML file.</td>
+</tr>
 </tbody>
 </table>
 </section>
-<section id="aggregation-functions" class="level2">
-<h2 class="anchored" data-anchor-id="aggregation-functions">Aggregation functions</h2>
+<section id="data-aggregation" class="level2">
+<h2 class="anchored" data-anchor-id="data-aggregation">Data aggregation</h2>
 <p>Functions to aggregate data along the branches of the lifemap tree.</p>
 <table class="table">
 <tbody>
