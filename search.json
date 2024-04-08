@@ -64,7 +64,31 @@
     "href": "reference/Lifemap.html",
     "title": "Lifemap",
     "section": "",
-    "text": "Lifemap\nLifemap(self, data, *, taxid_col='taxid', width=DEFAULT_WIDTH, height=DEFAULT_HEIGHT, zoom=5, legend_width=None)\nMain class allowing to create visualizations.",
+    "text": "Lifemap(self, data, *, taxid_col='taxid', width=DEFAULT_WIDTH, height=DEFAULT_HEIGHT, zoom=5, legend_width=None)\nBuild visualization.\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ndata\npl.DataFrame | pd.DataFrame\nVisualization data.\nrequired\n\n\ntaxid_col\nstr\nName of the data column with taxonomy ids, by default \"taxid\"\n'taxid'\n\n\nwidth\nint | str\nLifemap visualization width, in pixels or CSS units, by default DEFAULT_WIDTH\nDEFAULT_WIDTH\n\n\nheight\nint | str\nLifemap visualization height, in pixels or CSS units, by default DEFAULT_HEIGHT\nDEFAULT_HEIGHT\n\n\nzoom\nint\nDefault Lifemap zoom level, by default 5\n5\n\n\nlegend_width\nint | None\nLegend width in pixels, by default None\nNone\n\n\n\n\n\n\n&gt;&gt;&gt; import polars as pl\n&gt;&gt;&gt; from pylifemap import Lifemap\n&gt;&gt;&gt; d = pl.DataFrame({\"taxid\": [9685, 9615, 9994]})\n&gt;&gt;&gt; (\n...     Lifemap(d, width=\"100%\", height=\"100vh\")\n...     .layer_points()\n...     .show()\n&gt;&gt;&gt; )",
+    "crumbs": [
+      "Reference",
+      "Lifemap class",
+      "Lifemap"
+    ]
+  },
+  {
+    "objectID": "reference/Lifemap.html#parameters",
+    "href": "reference/Lifemap.html#parameters",
+    "title": "Lifemap",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ndata\npl.DataFrame | pd.DataFrame\nVisualization data.\nrequired\n\n\ntaxid_col\nstr\nName of the data column with taxonomy ids, by default \"taxid\"\n'taxid'\n\n\nwidth\nint | str\nLifemap visualization width, in pixels or CSS units, by default DEFAULT_WIDTH\nDEFAULT_WIDTH\n\n\nheight\nint | str\nLifemap visualization height, in pixels or CSS units, by default DEFAULT_HEIGHT\nDEFAULT_HEIGHT\n\n\nzoom\nint\nDefault Lifemap zoom level, by default 5\n5\n\n\nlegend_width\nint | None\nLegend width in pixels, by default None\nNone",
+    "crumbs": [
+      "Reference",
+      "Lifemap class",
+      "Lifemap"
+    ]
+  },
+  {
+    "objectID": "reference/Lifemap.html#examples",
+    "href": "reference/Lifemap.html#examples",
+    "title": "Lifemap",
+    "section": "",
+    "text": "&gt;&gt;&gt; import polars as pl\n&gt;&gt;&gt; from pylifemap import Lifemap\n&gt;&gt;&gt; d = pl.DataFrame({\"taxid\": [9685, 9615, 9994]})\n&gt;&gt;&gt; (\n...     Lifemap(d, width=\"100%\", height=\"100vh\")\n...     .layer_points()\n...     .show()\n&gt;&gt;&gt; )",
     "crumbs": [
       "Reference",
       "Lifemap class",
@@ -218,7 +242,7 @@
     "href": "reference/index.html",
     "title": "Reference",
     "section": "",
-    "text": "Main Lifemap class.\n\n\n\nLifemap\nMain class allowing to create visualizations.\n\n\n\n\n\n\nFunctions to aggregate data along the branches of the lifemap tree.\n\n\n\naggregate_count\nNodes count aggregation along branches.\n\n\naggregate_num\nNumerical variable aggregation along branches.\n\n\naggregate_freq\nCategorical variable frequencies aggregation along branches.",
+    "text": "Main Lifemap class.\n\n\n\nLifemap\nBuild visualization.\n\n\n\n\n\n\nFunctions to aggregate data along the branches of the lifemap tree.\n\n\n\naggregate_count\nNodes count aggregation along branches.\n\n\naggregate_num\nNumerical variable aggregation along branches.\n\n\naggregate_freq\nCategorical variable frequencies aggregation along branches.",
     "crumbs": [
       "Reference"
     ]
@@ -228,7 +252,7 @@
     "href": "reference/index.html#lifemap-class",
     "title": "Reference",
     "section": "",
-    "text": "Main Lifemap class.\n\n\n\nLifemap\nMain class allowing to create visualizations.",
+    "text": "Main Lifemap class.\n\n\n\nLifemap\nBuild visualization.",
     "crumbs": [
       "Reference"
     ]
