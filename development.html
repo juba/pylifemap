@@ -124,6 +124,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
+    <a class="nav-link" href="./installation.html"> 
+<span class="menu-text">Installation</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./getting_started.html"> 
 <span class="menu-text">Getting started</span></a>
   </li>  
@@ -196,6 +200,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#widget-javascript-modification-and-bundling" id="toc-widget-javascript-modification-and-bundling" class="nav-link" data-scroll-target="#widget-javascript-modification-and-bundling">Widget JavaScript modification and bundling</a></li>
   <li><a href="#tests" id="toc-tests" class="nav-link" data-scroll-target="#tests">Tests</a></li>
   <li><a href="#documentation" id="toc-documentation" class="nav-link" data-scroll-target="#documentation">Documentation</a></li>
+  <li><a href="#docker-image" id="toc-docker-image" class="nav-link" data-scroll-target="#docker-image">Docker image</a></li>
   <li><a href="#maintenance-notes" id="toc-maintenance-notes" class="nav-link" data-scroll-target="#maintenance-notes">Maintenance notes</a>
   <ul class="collapse">
   <li><a href="#releases" id="toc-releases" class="nav-link" data-scroll-target="#releases">Releases</a></li>
@@ -262,6 +267,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The package documentation is in <code>doc/</code>. It is managed by <a href="https://quarto.org">quarto</a> and <a href="https://machow.github.io/quartodoc/">quartodoc</a>.</p>
 <p>To build it in HTML format in <code>doc/_site/</code>you can run:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">hatch</span> run doc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="docker-image" class="level2">
+<h2 class="anchored" data-anchor-id="docker-image">Docker image</h2>
+<p>To build the docker image manually, run the following at the root of the repisotory:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> build . <span class="at">-t</span> pylifemap</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="maintenance-notes" class="level2">
 <h2 class="anchored" data-anchor-id="maintenance-notes">Maintenance notes</h2>
