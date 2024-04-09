@@ -258,7 +258,7 @@
     "href": "reference/Lifemap.show.html",
     "title": "Lifemap.show",
     "section": "",
-    "text": "Lifemap.show\nLifemap.show()\nDisplay the Jupyter widget for this instance.\nIf we are in a notebook environment, use display. Otherwise, export widget to an HTML file and open it in a browser if possible.",
+    "text": "Lifemap.show\nLifemap.show()\nDisplay the Jupyter widget for this instance.\nIn a notebook environment, the method uses IPython.display.display to display the visualization directly. Otherwise, it exports the widget to an HTML file and opens it in a browser if possible.",
     "crumbs": [
       "Reference",
       "Visualization",
@@ -310,11 +310,18 @@
     "text": "pylifemap is a jupyter widget allowing to visualize taxonomy data on Lifemap. It provides several visualisation layers, as well as aggregation functions allowing to aggregate data along the tree branches.\nHere is a simple example:\n\nimport pandas as pd\nfrom pylifemap import Lifemap\n\n# Load iucn dataset\niucn = pd.read_csv(\n    \"https://raw.githubusercontent.com/juba/pylifemap/main/data/iucn.csv\"\n)\n\nLifemap(iucn).layer_points(radius=5, opacity=0.1).show()"
   },
   {
-    "objectID": "index.html#installation-and-usage",
-    "href": "index.html#installation-and-usage",
+    "objectID": "index.html#installation",
+    "href": "index.html#installation",
     "title": "pylifemap",
-    "section": "Installation and usage",
-    "text": "Installation and usage\nFor the moment the package can only be installed from Github:\npip install git+https://github.com/juba/pylifemap.git\n\nGetting started gives general usage instructions.\nThe Layers section shows visual interactive examples of the different available layers.\nReference provides detailed documentation of the different methods and functions."
+    "section": "Installation",
+    "text": "Installation\nFor the moment the package can only be installed from Github:\npip install git+https://github.com/juba/pylifemap.git\nYou can also try the package without installing anything by using our introduction notebook in Google Colab:"
+  },
+  {
+    "objectID": "index.html#usage",
+    "href": "index.html#usage",
+    "title": "pylifemap",
+    "section": "Usage",
+    "text": "Usage\n\nGetting started gives general usage instructions.\nThe Layers section shows visual interactive examples of the different available layers.\nReference provides detailed documentation of the different methods and functions."
   },
   {
     "objectID": "index.html#credits",
@@ -755,7 +762,7 @@
     "href": "getting_started.html#prepare-your-data",
     "title": "Getting started",
     "section": "Prepare your data",
-    "text": "Prepare your data\nThe date you want to visualize on the Lifemap tree of life must be in a pandas or polars DataFrame. They must contain at least observations (species) as rows, and variables as columns, and at least one column must contain the NCBI taxonomy identifier of the species.\npylifemap includes an example polars data file generated from The IUCN Red List of Threatened Species. It is a CSV file with the Red List category (in 2022) of more than 84000 species.\nWe can import it as a polars DataFrame with the following code:\n\nimport polars as pl\n\niucn = pl.read_csv(\n    \"https://raw.githubusercontent.com/juba/pylifemap/main/data/iucn.csv\"\n)\n\nIf we display the resulting table, we can see that it only has two columns, one called taxid which contains the species identifiers, and another called status with the Red List category of each species:\n\niucn\n\n\n\nshape: (84_981, 2)\n\n\n\ntaxid\nstatus\n\n\ni64\nstr\n\n\n\n\n651506\n\"Data Deficient…\n\n\n2803960\n\"Critically End…\n\n\n143610\n\"Critically End…\n\n\n2760993\n\"Least Concern\"\n\n\n72259\n\"Least Concern\"\n\n\n…\n…\n\n\n337230\n\"Least Concern\"\n\n\n442623\n\"Vulnerable\"\n\n\n2303643\n\"Critically End…\n\n\n442625\n\"Critically End…\n\n\n442626\n\"Least Concern\""
+    "text": "Prepare your data\nThe data you want to visualize on the Lifemap tree of life must be in a pandas or polars DataFrame. They must contain observations (species) as rows, and variables as columns, and one column must contain the NCBI taxonomy identifier of the species.\npylifemap includes an example dataset generated from The IUCN Red List of Threatened Species. It is a CSV file with the Red List category (in 2022) of more than 84000 species.\nWe can import it as a polars or pandas DataFrame with the following code:\n\nPolarsPandas\n\n\n\nimport polars as pl\n\niucn = pl.read_csv(\n    \"https://raw.githubusercontent.com/juba/pylifemap/main/data/iucn.csv\"\n)\n\n\n\n\nimport pandas as pd\n\niucn = pd.read_csv(\n    \"https://raw.githubusercontent.com/juba/pylifemap/main/data/iucn.csv\"\n)\n\n\n\n\nThe resulting table only has two columns: taxid, which contains the species identifiers, and status, with the Red List category of each species.\n\niucn\n\n\n\nshape: (84_981, 2)\n\n\n\ntaxid\nstatus\n\n\ni64\nstr\n\n\n\n\n651506\n\"Data Deficient…\n\n\n2803960\n\"Critically End…\n\n\n143610\n\"Critically End…\n\n\n2760993\n\"Least Concern\"\n\n\n72259\n\"Least Concern\"\n\n\n…\n…\n\n\n337230\n\"Least Concern\"\n\n\n442623\n\"Vulnerable\"\n\n\n2303643\n\"Critically End…\n\n\n442625\n\"Critically End…\n\n\n442626\n\"Least Concern\""
   },
   {
     "objectID": "getting_started.html#initialize-a-lifemap-object",
@@ -769,7 +776,7 @@
     "href": "getting_started.html#add-visualization-layers",
     "title": "Getting started",
     "section": "Add visualization layers",
-    "text": "Add visualization layers\nAfter initializing our Lifemap object, we have to add visualization layers to create graphical representations. There are several different layers available:\n\n\n\n\nLayer\n\n\nDescription\n\n\n\n\n\n\nlayer_points\n\n\nDisplays each observation with a point. Radius and color can be dependent of an attribute in the DataFrame.\n\n\n\n\nlayer_lines\n\n\nUsing aggregated data, highlights branches of the tree by lines of varying width and color.\n\n\n\n\nlayer_donuts\n\n\nDisplays aggregated categorical data as donut charts.\n\n\n\n\nlayer_heatmap\n\n\nDisplays a heatmap of the observations distribution in the tree.\n\n\n\n\nlayer_screengrid\n\n\nDisplays the observations distribution with a colored grid with fixed-size cells..\n\n\n\n\nTo add a layer, we just have to call the corresponding layer_ method of our Lifemap object. For example, to add a points layer:\n\néLifemap(iucn, taxid_col=\"taxid\").layer_points()\n\nWe can add several layers by calling several methods. For example we could display a heatmap layer, and a points layer above it:\n\nLifemap(iucn, taxid_col=\"taxid\").layer_heatmap().layer_points()"
+    "text": "Add visualization layers\nAfter initializing our Lifemap object, we have to add visualization layers to create graphical representations. There are several different layers available:\n\n\n\nLayer\nDescription\n\n\n\n\nlayer_points\nDisplays each observation with a point. Radius and color can be dependent of an attribute in the DataFrame.\n\n\nlayer_lines\nUsing aggregated data, highlights branches of the tree with lines of varying width and color.\n\n\nlayer_donuts\nDisplays aggregated categorical data as donut charts.\n\n\nlayer_heatmap\nDisplays a heatmap of the observations distribution in the tree.\n\n\nlayer_screengrid\nDisplays the observations distribution with a colored grid with fixed-size cells..\n\n\n\nTo add a layer, we just have to call the corresponding layer_ method of our Lifemap object. For example, to add a points layer:\n\nLifemap(iucn, taxid_col=\"taxid\").layer_points()\n\nWe can add several layers by calling several methods. For example we could display a heatmap layer, and a points layer above it:\n\nLifemap(iucn, taxid_col=\"taxid\").layer_heatmap().layer_points()"
   },
   {
     "objectID": "getting_started.html#show-or-save-the-visualization",
@@ -790,6 +797,6 @@
     "href": "getting_started.html#aggregate-data",
     "title": "Getting started",
     "section": "Aggregate data",
-    "text": "Aggregate data\npylifemap provides several aggregation functions that allow to aggregate data along the branches of the tree:\n\n\n\n\nFunction\n\n\nDescription\n\n\n\n\n\n\naggregate_count\n\n\nAggregates the number of children of each tree node.\n\n\n\n\naggregate_num\n\n\nAggregates a numerical variable along the tree branches with a given function (sum, mean, max…).\n\n\n\n\naggregate_freq\n\n\nAggregates the frequencies of the levels of a categorical variable.\n\n\n\n\nFor example, we could filter out in our data set the species which have an “extinct” status:\n\niucn_extinct = iucn.filter(pl.col(\"status\") == \"Extinct\")\n\nWe can then aggregate their count along the branches with aggregate_count:\n\nfrom pylifemap import aggregate_count\niucn_extinct_agg = aggregate_count(iucn_extinct)\niucn_extinct_agg\n\n\n\nshape: (768, 2)\n\n\n\ntaxid\nn\n\n\ni32\nu32\n\n\n\n\n0\n198\n\n\n2759\n198\n\n\n3193\n21\n\n\n3268\n1\n\n\n3398\n20\n\n\n…\n…\n\n\n3036923\n1\n\n\n3041918\n1\n\n\n3055989\n1\n\n\n3072905\n2\n\n\n3076244\n1\n\n\n\n\n\n\n\nFinally, we can represent this new dataset with a lines layer.\n\n(\n    Lifemap(iucn_extinct_agg)\n    .layer_lines(color_col=\"n\", width_col=\"n\", label=\"Extinct species\")\n    .show()\n)"
+    "text": "Aggregate data\npylifemap provides several aggregation functions that allow to aggregate data along the branches of the tree:\n\n\n\nFunction\nDescription\n\n\n\n\naggregate_count\nAggregates the number of children of each tree node.\n\n\naggregate_num\nAggregates a numerical variable along the tree branches with a given function (sum , mean, max…).\n\n\naggregate_freq\nAggregates the frequencies of the levels of a categorical variable.\n\n\n\nFor example, we could filter out in our data set the species which have an “extinct” status:\n\nPolarsPandas\n\n\n\niucn_extinct = iucn.filter(pl.col(\"status\") == \"Extinct\")\n\n\n\n\niucn_extinct = iucn[iucn[\"status\"] == \"Extinct\"]\n\n\n\n\nWe can then aggregate their count along the branches with aggregate_count:\n\nfrom pylifemap import aggregate_count\niucn_extinct_agg = aggregate_count(iucn_extinct)\niucn_extinct_agg\n\n\n\nshape: (768, 2)\n\n\n\ntaxid\nn\n\n\ni32\nu32\n\n\n\n\n0\n198\n\n\n2759\n198\n\n\n3193\n21\n\n\n3268\n1\n\n\n3398\n20\n\n\n…\n…\n\n\n3036923\n1\n\n\n3041918\n1\n\n\n3055989\n1\n\n\n3072905\n2\n\n\n3076244\n1\n\n\n\n\n\n\n\nFinally, we can represent this new dataset with a lines layer.\n\n(\n    Lifemap(iucn_extinct_agg)\n    .layer_lines(color_col=\"n\", width_col=\"n\", label=\"Extinct species\")\n    .show()\n)"
   }
 ]
