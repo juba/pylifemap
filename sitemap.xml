@@ -2,90 +2,90 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://juba.github.io/pylifemap/installation.html</loc>
-    <lastmod>2024-04-09T12:11:33.912Z</lastmod>
+    <lastmod>2024-04-10T08:13:31.985Z</lastmod>
   </url>
   <url>
     <loc>https://juba.github.io/pylifemap/getting_started.html</loc>
-    <lastmod>2024-04-09T12:11:33.912Z</lastmod>
+    <lastmod>2024-04-10T08:13:31.985Z</lastmod>
   </url>
   <url>
     <loc>https://juba.github.io/pylifemap/reference/Lifemap.layer_donuts.html</loc>
-    <lastmod>2024-04-09T12:12:26.119Z</lastmod>
+    <lastmod>2024-04-10T08:14:23.606Z</lastmod>
   </url>
   <url>
     <loc>https://juba.github.io/pylifemap/reference/Lifemap.html</loc>
-    <lastmod>2024-04-09T12:12:26.099Z</lastmod>
+    <lastmod>2024-04-10T08:14:23.586Z</lastmod>
   </url>
   <url>
     <loc>https://juba.github.io/pylifemap/reference/aggregate_count.html</loc>
-    <lastmod>2024-04-09T12:12:26.135Z</lastmod>
+    <lastmod>2024-04-10T08:14:23.622Z</lastmod>
   </url>
   <url>
     <loc>https://juba.github.io/pylifemap/reference/Lifemap.layer_points.html</loc>
-    <lastmod>2024-04-09T12:12:26.107Z</lastmod>
+    <lastmod>2024-04-10T08:14:23.594Z</lastmod>
   </url>
   <url>
     <loc>https://juba.github.io/pylifemap/reference/Lifemap.layer_screengrid.html</loc>
-    <lastmod>2024-04-09T12:12:26.127Z</lastmod>
+    <lastmod>2024-04-10T08:14:23.614Z</lastmod>
   </url>
   <url>
     <loc>https://juba.github.io/pylifemap/reference/Lifemap.save.html</loc>
-    <lastmod>2024-04-09T12:12:26.131Z</lastmod>
+    <lastmod>2024-04-10T08:14:23.618Z</lastmod>
   </url>
   <url>
     <loc>https://juba.github.io/pylifemap/layers/layer_screengrid.html</loc>
-    <lastmod>2024-04-09T12:11:33.912Z</lastmod>
+    <lastmod>2024-04-10T08:13:31.985Z</lastmod>
   </url>
   <url>
     <loc>https://juba.github.io/pylifemap/layers/layer_heatmap.html</loc>
-    <lastmod>2024-04-09T12:11:33.912Z</lastmod>
+    <lastmod>2024-04-10T08:13:31.985Z</lastmod>
   </url>
   <url>
     <loc>https://juba.github.io/pylifemap/layers/layer_donuts.html</loc>
-    <lastmod>2024-04-09T12:11:33.912Z</lastmod>
+    <lastmod>2024-04-10T08:13:31.985Z</lastmod>
   </url>
   <url>
     <loc>https://juba.github.io/pylifemap/development.html</loc>
-    <lastmod>2024-04-09T12:11:33.912Z</lastmod>
+    <lastmod>2024-04-10T08:13:31.985Z</lastmod>
   </url>
   <url>
     <loc>https://juba.github.io/pylifemap/layers/layer_lines.html</loc>
-    <lastmod>2024-04-09T12:11:33.912Z</lastmod>
+    <lastmod>2024-04-10T08:13:31.985Z</lastmod>
   </url>
   <url>
     <loc>https://juba.github.io/pylifemap/layers/layer_points.html</loc>
-    <lastmod>2024-04-09T12:11:33.912Z</lastmod>
+    <lastmod>2024-04-10T08:13:31.985Z</lastmod>
   </url>
   <url>
     <loc>https://juba.github.io/pylifemap/index.html</loc>
-    <lastmod>2024-04-09T12:11:33.912Z</lastmod>
+    <lastmod>2024-04-10T08:13:31.985Z</lastmod>
   </url>
   <url>
     <loc>https://juba.github.io/pylifemap/reference/index.html</loc>
-    <lastmod>2024-04-09T12:12:26.079Z</lastmod>
+    <lastmod>2024-04-10T08:14:23.570Z</lastmod>
   </url>
   <url>
     <loc>https://juba.github.io/pylifemap/reference/Lifemap.show.html</loc>
-    <lastmod>2024-04-09T12:12:26.127Z</lastmod>
+    <lastmod>2024-04-10T08:14:23.614Z</lastmod>
   </url>
   <url>
     <loc>https://juba.github.io/pylifemap/reference/aggregate_num.html</loc>
-    <lastmod>2024-04-09T12:12:26.139Z</lastmod>
+    <lastmod>2024-04-10T08:14:23.626Z</lastmod>
   </url>
   <url>
     <loc>https://juba.github.io/pylifemap/reference/Lifemap.layer_heatmap.html</loc>
-    <lastmod>2024-04-09T12:12:26.123Z</lastmod>
+    <lastmod>2024-04-10T08:14:23.610Z</lastmod>
   </url>
   <url>
     <loc>https://juba.github.io/pylifemap/reference/Lifemap.layer_lines.html</loc>
-    <lastmod>2024-04-09T12:12:26.111Z</lastmod>
+    <lastmod>2024-04-10T08:14:23.598Z</lastmod>
   </url>
   <url>
     <loc>https://juba.github.io/pylifemap/reference/aggregate_freq.html</loc>
-    <lastmod>2024-04-09T12:12:26.143Z</lastmod>
+    <lastmod>2024-04-10T08:14:23.630Z</lastmod>
   </url>
   <url>
     <loc>https://juba.github.io/pylifemap/changelog.html</loc>
-    <lastmod>2024-04-09T12:11:33.912Z</lastmod>
+    <lastmod>2024-04-10T08:13:31.985Z</lastmod>
   </url>
 </urlset>
