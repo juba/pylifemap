@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -180,7 +180,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
           </div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
-    <a href="https://github.com/juba/pylifemap/" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+    <a href="https://github.com/Lifemap-ToL/pylifemap/" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
@@ -204,7 +204,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#run-a-script" id="toc-run-a-script" class="nav-link" data-scroll-target="#run-a-script">Run a script</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/juba/pylifemap/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/Lifemap-ToL/pylifemap/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -250,26 +250,26 @@ Note
 <h2 class="anchored" data-anchor-id="install-locally">Install locally</h2>
 <p>You can install the package locally (preferably in a virtual environment) with <a href="https://pypi.org/project/pip/">pip</a>.</p>
 <p>For the moment only the development version can be installed from Github with the following command:</p>
-<pre class="shell"><code>pip install git+https://github.com/juba/pylifemap.git</code></pre>
+<pre class="shell"><code>pip install git+https://github.com/Lifemap-ToL/pylifemap.git</code></pre>
 </section>
 <section id="run-in-google-colab" class="level2">
 <h2 class="anchored" data-anchor-id="run-in-google-colab">Run in Google Colab</h2>
 <p>You can try the package (without installing anything) in <a href="https://colab.research.google.com/">Google Colab</a>.</p>
-<p>The easiest way is by using our <a href="https://colab.research.google.com/github/juba/pylifemap/blob/master/notebooks/introduction.ipynb">introduction notebook</a> directly in Colab: <a href="https://colab.research.google.com/github/juba/pylifemap/blob/master/notebooks/introduction.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open In Colab"></a>.</p>
+<p>The easiest way is by using our <a href="https://colab.research.google.com/github/Lifemap-ToL/pylifemap/blob/master/notebooks/introduction.ipynb">introduction notebook</a> directly in Colab: <a href="https://colab.research.google.com/github/Lifemap-ToL/pylifemap/blob/master/notebooks/introduction.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open In Colab"></a>.</p>
 </section>
 <section id="run-with-docker" class="level2">
 <h2 class="anchored" data-anchor-id="run-with-docker">Run with Docker</h2>
 <section id="run-in-jupyter" class="level3">
 <h3 class="anchored" data-anchor-id="run-in-jupyter">Run in Jupyter</h3>
-<p>Another way to use the package without having to install it is to use our <a href="https://github.com/juba/pylifemap/pkgs/container/pylifemap">Docker image</a>.</p>
+<p>Another way to use the package without having to install it is to use our <a href="https://github.com/Lifemap-ToL/pylifemap/pkgs/container/pylifemap">Docker image</a>.</p>
 <p>To use <code>pylifemap</code> in a Jupyter environment, you have to <a href="https://docs.docker.com/engine/install/">install Docker</a>, open a terminal in the directory containing your data and notebook files, and run:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-it</span> <span class="at">-p</span> 8899:8899 <span class="at">-v</span> <span class="va">$PWD</span>:/local/ ghcr.io/juba/pylifemap:latest</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-it</span> <span class="at">-p</span> 8899:8899 <span class="at">-v</span> <span class="va">$PWD</span>:/local/ ghcr.io/Lifemap-ToL/pylifemap:latest</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Open the following URL in your browser: <a href="http://127.0.0.1:8899/lab" class="uri">http://127.0.0.1:8899/lab</a>, and you will have access to a Jupyter notebook environment with <code>pylifemap</code> and its dependencies preinstalled.</p>
 </section>
 <section id="run-a-script" class="level3">
 <h3 class="anchored" data-anchor-id="run-a-script">Run a script</h3>
 <p>If you just want to run a Python script generating a pylifemap visualization, you can open a terminal in the script directory and run the following command:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-v</span> <span class="va">$PWD</span>:/local/ ghcr.io/juba/pylifemap:latest myscript.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-v</span> <span class="va">$PWD</span>:/local/ ghcr.io/Lifemap-ToL/pylifemap:latest myscript.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>In this case, if you use <a href="./reference/Lifemap.show.html#pylifemap.Lifemap.show">show()</a> in your script the result will not be opened in your browser but will instead be saved in a <code>lifemap.html</code> file in your working directory.</p>
 
 
@@ -502,7 +502,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/juba\.github\.io\/pylifemap");
+      var filterRegex = new RegExp("https:\/\/lifemap-tol\.github\.io\/pylifemap");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -835,4 +835,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/juba/pylifemap/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Lifemap-ToL/pylifemap/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

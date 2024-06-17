@@ -1,91 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://juba.github.io/pylifemap/installation.html</loc>
-    <lastmod>2024-04-10T08:13:31.985Z</lastmod>
+    <loc>https://lifemap-tol.github.io/pylifemap/getting_started.html</loc>
+    <lastmod>2024-06-17T13:00:22.831Z</lastmod>
   </url>
   <url>
-    <loc>https://juba.github.io/pylifemap/getting_started.html</loc>
-    <lastmod>2024-04-10T08:13:31.985Z</lastmod>
+    <loc>https://lifemap-tol.github.io/pylifemap/layers/layer_donuts.html</loc>
+    <lastmod>2024-06-17T13:00:22.831Z</lastmod>
   </url>
   <url>
-    <loc>https://juba.github.io/pylifemap/reference/Lifemap.layer_donuts.html</loc>
-    <lastmod>2024-04-10T08:14:23.606Z</lastmod>
+    <loc>https://lifemap-tol.github.io/pylifemap/layers/layer_lines.html</loc>
+    <lastmod>2024-06-17T13:00:22.831Z</lastmod>
   </url>
   <url>
-    <loc>https://juba.github.io/pylifemap/reference/Lifemap.html</loc>
-    <lastmod>2024-04-10T08:14:23.586Z</lastmod>
+    <loc>https://lifemap-tol.github.io/pylifemap/layers/layer_heatmap.html</loc>
+    <lastmod>2024-06-17T13:00:22.831Z</lastmod>
   </url>
   <url>
-    <loc>https://juba.github.io/pylifemap/reference/aggregate_count.html</loc>
-    <lastmod>2024-04-10T08:14:23.622Z</lastmod>
+    <loc>https://lifemap-tol.github.io/pylifemap/reference/Lifemap.save.html</loc>
+    <lastmod>2024-06-17T13:01:39.535Z</lastmod>
   </url>
   <url>
-    <loc>https://juba.github.io/pylifemap/reference/Lifemap.layer_points.html</loc>
-    <lastmod>2024-04-10T08:14:23.594Z</lastmod>
+    <loc>https://lifemap-tol.github.io/pylifemap/reference/Lifemap.layer_lines.html</loc>
+    <lastmod>2024-06-17T13:01:39.511Z</lastmod>
   </url>
   <url>
-    <loc>https://juba.github.io/pylifemap/reference/Lifemap.layer_screengrid.html</loc>
-    <lastmod>2024-04-10T08:14:23.614Z</lastmod>
+    <loc>https://lifemap-tol.github.io/pylifemap/reference/Lifemap.layer_screengrid.html</loc>
+    <lastmod>2024-06-17T13:01:39.531Z</lastmod>
   </url>
   <url>
-    <loc>https://juba.github.io/pylifemap/reference/Lifemap.save.html</loc>
-    <lastmod>2024-04-10T08:14:23.618Z</lastmod>
+    <loc>https://lifemap-tol.github.io/pylifemap/reference/Lifemap.layer_points.html</loc>
+    <lastmod>2024-06-17T13:01:39.503Z</lastmod>
   </url>
   <url>
-    <loc>https://juba.github.io/pylifemap/layers/layer_screengrid.html</loc>
-    <lastmod>2024-04-10T08:13:31.985Z</lastmod>
+    <loc>https://lifemap-tol.github.io/pylifemap/reference/Lifemap.html</loc>
+    <lastmod>2024-06-17T13:01:39.491Z</lastmod>
   </url>
   <url>
-    <loc>https://juba.github.io/pylifemap/layers/layer_heatmap.html</loc>
-    <lastmod>2024-04-10T08:13:31.985Z</lastmod>
+    <loc>https://lifemap-tol.github.io/pylifemap/reference/Lifemap.show.html</loc>
+    <lastmod>2024-06-17T13:01:39.531Z</lastmod>
   </url>
   <url>
-    <loc>https://juba.github.io/pylifemap/layers/layer_donuts.html</loc>
-    <lastmod>2024-04-10T08:13:31.985Z</lastmod>
+    <loc>https://lifemap-tol.github.io/pylifemap/installation.html</loc>
+    <lastmod>2024-06-17T13:00:22.831Z</lastmod>
   </url>
   <url>
-    <loc>https://juba.github.io/pylifemap/development.html</loc>
-    <lastmod>2024-04-10T08:13:31.985Z</lastmod>
+    <loc>https://lifemap-tol.github.io/pylifemap/changelog.html</loc>
+    <lastmod>2024-06-17T13:00:22.831Z</lastmod>
   </url>
   <url>
-    <loc>https://juba.github.io/pylifemap/layers/layer_lines.html</loc>
-    <lastmod>2024-04-10T08:13:31.985Z</lastmod>
+    <loc>https://lifemap-tol.github.io/pylifemap/reference/aggregate_num.html</loc>
+    <lastmod>2024-06-17T13:01:39.547Z</lastmod>
   </url>
   <url>
-    <loc>https://juba.github.io/pylifemap/layers/layer_points.html</loc>
-    <lastmod>2024-04-10T08:13:31.985Z</lastmod>
+    <loc>https://lifemap-tol.github.io/pylifemap/reference/Lifemap.layer_heatmap.html</loc>
+    <lastmod>2024-06-17T13:01:39.523Z</lastmod>
   </url>
   <url>
-    <loc>https://juba.github.io/pylifemap/index.html</loc>
-    <lastmod>2024-04-10T08:13:31.985Z</lastmod>
+    <loc>https://lifemap-tol.github.io/pylifemap/reference/index.html</loc>
+    <lastmod>2024-06-17T13:01:39.471Z</lastmod>
   </url>
   <url>
-    <loc>https://juba.github.io/pylifemap/reference/index.html</loc>
-    <lastmod>2024-04-10T08:14:23.570Z</lastmod>
+    <loc>https://lifemap-tol.github.io/pylifemap/reference/aggregate_count.html</loc>
+    <lastmod>2024-06-17T13:01:39.539Z</lastmod>
   </url>
   <url>
-    <loc>https://juba.github.io/pylifemap/reference/Lifemap.show.html</loc>
-    <lastmod>2024-04-10T08:14:23.614Z</lastmod>
+    <loc>https://lifemap-tol.github.io/pylifemap/reference/aggregate_freq.html</loc>
+    <lastmod>2024-06-17T13:01:39.551Z</lastmod>
   </url>
   <url>
-    <loc>https://juba.github.io/pylifemap/reference/aggregate_num.html</loc>
-    <lastmod>2024-04-10T08:14:23.626Z</lastmod>
+    <loc>https://lifemap-tol.github.io/pylifemap/reference/Lifemap.layer_donuts.html</loc>
+    <lastmod>2024-06-17T13:01:39.519Z</lastmod>
   </url>
   <url>
-    <loc>https://juba.github.io/pylifemap/reference/Lifemap.layer_heatmap.html</loc>
-    <lastmod>2024-04-10T08:14:23.610Z</lastmod>
+    <loc>https://lifemap-tol.github.io/pylifemap/index.html</loc>
+    <lastmod>2024-06-17T13:00:22.831Z</lastmod>
   </url>
   <url>
-    <loc>https://juba.github.io/pylifemap/reference/Lifemap.layer_lines.html</loc>
-    <lastmod>2024-04-10T08:14:23.598Z</lastmod>
+    <loc>https://lifemap-tol.github.io/pylifemap/layers/layer_points.html</loc>
+    <lastmod>2024-06-17T13:00:22.831Z</lastmod>
   </url>
   <url>
-    <loc>https://juba.github.io/pylifemap/reference/aggregate_freq.html</loc>
-    <lastmod>2024-04-10T08:14:23.630Z</lastmod>
+    <loc>https://lifemap-tol.github.io/pylifemap/layers/layer_screengrid.html</loc>
+    <lastmod>2024-06-17T13:00:22.831Z</lastmod>
   </url>
   <url>
-    <loc>https://juba.github.io/pylifemap/changelog.html</loc>
-    <lastmod>2024-04-10T08:13:31.985Z</lastmod>
+    <loc>https://lifemap-tol.github.io/pylifemap/development.html</loc>
+    <lastmod>2024-06-17T13:00:22.831Z</lastmod>
   </url>
 </urlset>

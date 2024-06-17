@@ -1,1 +1,1 @@
-Sitemap: https://juba.github.io/pylifemap/sitemap.xml
+Sitemap: https://lifemap-tol.github.io/pylifemap/sitemap.xml
